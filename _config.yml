@@ -1,0 +1,18 @@
+title: My Personal Blog
+description: A brief description of my site.
+url: https://alexpeain.github.io/blog
+author:
+  name: Alex Peain
+  email: alexpeain@gmail.com
+
+theme: jekyll-theme-minimal
+baseurl: "/blog"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+social:
+  twitter: alexdocoding
+  github: https://github.com/Alexpeain
+  

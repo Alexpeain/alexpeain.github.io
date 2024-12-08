@@ -47,8 +47,8 @@
         </div>
         
         
-      <!-- </section> -->
-      <div class="tech_skill-container">
+    <!-- </section> -->
+    <div class="tech_skill-container">
         <div class="tech-stack">
             <h3 class="about_skills-title">
                 Tech Stacks
@@ -66,9 +66,7 @@
             
         </div>
     </div>
-      
-      
-      <section id="projects">
+    <section id="projects">
         <div class="projects_container">
             <h1>My Projects</h1>
             <div class="card_container">
@@ -82,7 +80,7 @@
                 </article>
 
                 <article class="card_article">
-                     <img src="./images/technical_doc.PNG" alt="image" class="card_img" height="250px"> <!--width ='350px'  -->
+                    <img src="./images/technical_doc.PNG" alt="image" class="card_img" height="250px"> <!--width ='350px'  -->
                     <div class="card_data">
                         <!-- <span class="card_description">Techincal Documentation Page</span> -->
                         <h2 class="class_title">A technical documentation page</h2>
@@ -99,10 +97,52 @@
                         <a href="https://github.com/Alexpeain/myanmar-bookreviews" class="card_button">Read More!</a>
                     </div>
                 </article>
+            <!-- ... other projects ... -->
 
-            </div>
+            <article class="backend_project">
+                <div class="backend_project_data">
+                    <span class="project_description">Backend Project</span>
+                    <h2 class="project_title">Task Tracker CLI</h2>
+                    <p class="project_text">The Task Tracker CLI is a command-line interface application to track and manage tasks.</p>
+                    <a href="https://github.com/Alexpeain/Task-Tracker-Cli" class="project_button">View on GitHub</a>
+                </div>
+            </article>
+
+            <!-- Additional backend projects -->
+            <article class="backend_project">
+                <div class="backend_project_data">
+                    <span class="project_description">Backend Project</span>
+                    <h2 class="project_title">Expenses Tracker CLI</h2>
+                    <p class="project_text">A command-line interface (CLI) application for tracking expenses, allowing users to create, view, update, and delete expense records efficiently.</p>
+                    <a href="https://github.com/Alexpeain/expenses-tracker-cli" class="project_button">View on GitHub</a>
+                </div>
+            </article>
+
+            <article class="backend_project">
+                <div class="backend_project_data">
+                    <span class="project_description">Backend Project</span>
+                    <h2 class="project_title">Django Blog API</h2>
+                    <p class="project_text">A RESTful API built with Django for managing blog posts, enabling users to create, read, update, and delete content efficiently. Features include user authentication and authorization.</p>
+                    <a href="https://github.com/Alexpeain/Blog-API-Django" class="project_button">View on GitHub</a>
+                </div>
+            </article>
+
+            <!-- More projects as needed -->
+            <article class="backend_project hidden">
+                <div class="backend_project_data">
+                    <span class="project_description">Backend Project</span>
+                    <h2 class="project_title">Todolist API</h2>
+                    <p class="project_text">A RESTful API built with Django for managing to-do lists, enabling users to create, read, update, and delete tasks efficiently. Features include user authentication.</p>
+                    <a href="https://github.com/Alexpeain/todolist-api" class="project_button">View on GitHub</a>
+                </div>
+            </article>
         </div>
-      </section>
+        
+        <div class="button_container">
+            <button id="seeMoreButton">See More</button>
+        </div>
+    </div>
+    </section>
     <section id="contact">
         <h1>Contact Me!</h1>
         <div class="social-medias">
@@ -117,15 +157,46 @@
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.js"></script>
-  <script>
-   
+<script>
+
     var typed=new Typed(".input",{
             strings:["Backend Developer","Python Developer"],
             typedSpeed:70,
             backSpeed:55,
             loop:true
         })
-  </script>
+
+    
+        document.addEventListener('DOMContentLoaded', function() {
+        const projects = document.querySelectorAll('.backend_project, .card_article'); // Select all project elements
+        const seeMoreButton = document.getElementById('seeMoreButton');
+        let visibleCount = 6; // Start with 6 visible projects
+
+        // Initially hide all projects beyond the first 6
+        projects.forEach((project, index) => {
+            if (index >= visibleCount) {
+                project.classList.add('hidden');
+            }
+        });
+
+        seeMoreButton.addEventListener('click', function() {
+            // Show the next 3 projects
+            const hiddenProjects = Array.from(projects).filter(project => project.classList.contains('hidden'));
+            if (hiddenProjects.length > 0) {
+                const nextProjects = hiddenProjects.slice(0, 3); // Get the next 3 hidden projects
+                nextProjects.forEach(project => project.classList.remove('hidden')); // Show them
+
+                // Update the visible count
+                visibleCount += nextProjects.length;
+
+                // Hide the button if no more projects are hidden
+                if (hiddenProjects.length <= 3) {
+                    seeMoreButton.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
     <footer>Created By Alex Peain Nov 2023</footer>
 </body>
 </html>

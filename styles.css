@@ -253,6 +253,30 @@ section {
 .card_article:not(hover) .card_data {
     animation: remove-data 1s forwards;
 }
+/* Filters */
+.filter-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.filter-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0074d9;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #005fa3;
+}
+
+.filter-btn.active {
+    background-color: #005fa3;
+}
 @keyframes show-data {
     50% {
         transform: translateY(-10rem);

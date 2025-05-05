@@ -71,6 +71,12 @@
     <section id="projects">
         <div class="projects_container">
             <h1>My Projects</h1>
+            <!--  Adding Filter            -->
+            <div class="filter-container">
+                <button class="filter-btn" data-category="all">All Projects</button>
+                <button class="filter-btn" data-category="backend">Backend Projects</button>
+                <button class="filter-btn" data-category="cloud">Cloud Projects</button>
+            </div>
             <div class="card_container">
                 <article class="card_article">
                     <img src="./images/Anne.PNG" alt="image" class="card_img"  > <!-- width ='380px' height="250px" -->
@@ -92,7 +98,7 @@
                 </article>
             <!-- ... other projects ... -->
 
-            <article class="backend_project">
+            <article class="backend_project" data-category="backend">
                 <div class="backend_project_data">
                     <span class="project_description">Backend Project</span>
                     <h2 class="project_title">Task Tracker CLI</h2>
@@ -102,7 +108,7 @@
             </article>
 
             <!-- Additional backend projects -->
-            <article class="backend_project">
+            <article class="backend_project" data-category="backend">
                 <div class="backend_project_data">
                     <span class="project_description">Backend Project</span>
                     <h2 class="project_title">Expenses Tracker CLI</h2>
@@ -111,7 +117,7 @@
                 </div>
             </article>
 
-            <article class="backend_project">
+            <article class="backend_project" data-category="backend">
                 <div class="backend_project_data">
                     <span class="project_description">Backend Project</span>
                     <h2 class="project_title">Django Blog API</h2>
@@ -121,7 +127,7 @@
             </article>
 
             <!-- More projects as needed -->
-            <article class="backend_project">
+            <article class="backend_project" data-category="backend">
                 <div class="backend_project_data">
                     <span class="project_description">Backend Project</span>
                     <h2 class="project_title">Todolist API</h2>
@@ -131,7 +137,7 @@
             </article>
 
             <!--    Cloud Projects           -->
-            <article class="backend_project">
+            <article class="backend_project" data-category="cloud">
                 <div class="backend_project_data">
                     <span class="project_description">Cloud Project</span>
                     <h2 class="project_title">Event-Driven-Notification-System</h2>
@@ -140,7 +146,7 @@
                 </div>
             </article>
 
-            <article class="backend_project">
+            <article class="backend_project" data-category="cloud">
                 <div class="backend_project_data">
                     <span class="project_description">Cloud Project</span>
                     <h2 class="project_title">NBA Data Lake with AWS Services</h2>
@@ -149,7 +155,7 @@
                 </div>
             </article>
 
-            <article class="backend_project hidden">
+            <article class="backend_project hidden" data-category="cloud">
                 <div class="backend_project_data">
                     <span class="project_description">Cloud Project</span>
                     <h2 class="project_title">Weather data collection and storage system</h2>
@@ -217,6 +223,32 @@
             }
         });
     });
+
+    // adding Filter
+    document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('article');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove the 'active' class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add the 'active' class to the clicked button
+            this.classList.add('active');
+
+            const category = this.getAttribute('data-category');
+
+            // Show or hide projects based on the selected category
+            projects.forEach(project => {
+                if (category === 'all' || project.getAttribute('data-category') === category) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        });
+    });
+});
 </script>
     <footer>Created By Alex Peain Nov 2023</footer>
 </body>

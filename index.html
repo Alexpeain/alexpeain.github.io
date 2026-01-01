@@ -3,253 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alex Peain's portfolio showcasing backend development projects in Python, Django, and Cloud technologies.">
-    <title>Alex Peain - Backend Developer and Portfolio"</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./images/AP(2).png">
+    <meta name="description" content="Alex Peain - Backend Developer specializing in Python, Django, APIs, and DevOps. View my portfolio of production projects.">
+    <meta name="keywords" content="backend developer, Python, Django, APIs, DevOps, AWS, Docker">
+    <meta name="author" content="Alex Peain">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Alex Peain - Backend Developer & Portfolio">
+    <meta property="og:description" content="Self-taught backend developer with 5+ years Python experience. Specializing in Django, REST APIs, DevOps.">
+    <meta property="og:image" content="./images/AP(2).png">
+    <meta property="og:url" content="https://alexpeain.github.io">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0074d9">
+    
+    <title>Alex Peain - Backend Developer</title>
+    
+    <link rel="icon" type="image/x-icon" href="./images/AP(2).png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet"> 
-<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
-
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" integrity="sha512-DTOQO9RWCH3H7f51yTmQloff-ovl8IYGLOrRte7nR+M1Y0Y4RJVQ+B2CCVxQ6zcHB002U8chQV6cNjqIcMw+8A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav id="nav-bar">
+        <nav id="nav-bar" aria-label="Main navigation">
             <ul class="nav-links">
                 <li><a href="#welcome-section" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#tech-skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="https://medium.com/@tonghsengsom" target="_blank" rel="noopener noreferrer">Blog</a></li>
             </ul>
         </nav>
     </header>
-    
-    <!-- <section id="welcome-section"> -->
-        <div class="welcome-container" id="welcome-section">
-            <div class="welcome-image">
-            <img src="./images/hide/nslp.jpg" alt="Alex Peain">
-            </div>
-            <div class="welcome-text">
-                <h5>Hi I'm <span class="input">Backend Developer</span></h5>
-                <h1>Alex Peain</h1>
-                <!-- <p>Backend Developer</p> -->
-                <p >I am a self-taught developer,  
-                    I am passionate about Backend Development 
-                    and Blockchain Technology.
-                </p>
-                <div class="btn-group">
-                    <!-- <a href="https://drive.google.com/file/u/1/d/1yQOGx3LrX_IGzN1cwevhLS2ujOaB-Pfd/uc?export=download&id=FILE_ID_HERE" class="btn active">Download CV</a> -->
-                    <a href="https://drive.google.com/file/d/1xa9yCZyeVjPMEcYi7IvQk-zsS8xKMiEv/view?usp=sharing" class="btn active" download>Download CV</a>
-                    <a href="mailto:nang.senglean.pein@gmail.com" class="btn">Contact</a>
-                </div>
+
+    <!-- Hero Section -->
+    <section id="welcome-section" class="welcome-container" aria-labelledby="hero-title">
+        <div class="welcome-image">
+            <img src="./images/hide/nslp.jpg" alt="Alex Peain, Backend Developer" loading="eager" width="300" height="300">
+        </div>
+        <div class="welcome-text">
+            <h5>Hi, I'm a</h5>
+            <h1 id="hero-title">Backend Developer</h1>
+            <p>Self-taught full-stack developer with 5+ years of Python experience, specializing in Django REST APIs, DevOps practices, and scalable architecture. Currently seeking junior backend roles.</p>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1xa9yCZyeVjPMEcYi7IvQk-zsS8xKMiEv/view?usp=sharing" class="btn active" download rel="noopener noreferrer">Download CV</a>
+                <a href="mailto:nang.senglean.pein@gmail.com" class="btn">Contact Me</a>
             </div>
         </div>
-        
-        
-    <!-- </section> -->
-    <div class="tech_skill-container">
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-container" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
+        <p>I'm a self-taught developer from Myanmar passionate about building production-ready backend systems. I've spent the last 5 years mastering Python and 2+ years deepening my Django expertise through real-world projects. My focus is on writing clean, maintainable code and understanding system design fundamentals.</p>
+        <p>I'm also passionate about NLP and language preservation, building tools for underrepresented languages like Shan.</p>
+    </section>
+
+    <!-- Tech Skills Section -->
+    <section id="tech-skills" class="tech-skill-container" aria-labelledby="skills-title">
         <div class="tech-stack">
-            <h3 class="about_skills-title">
-                Tech Stacks
-            </h3>
+            <h2 id="skills-title">Tech Stack</h2>
             <div class="about_skills-content grid">
-                <a href="https://www.codewars.com/users/Alexpeain"><i class="fab fa-python" style="color: #0074d9;"></i> </a>
-                <a href="https://www.codewars.com/users/Alexpeain"><i class="fab fa-js" style="color: #ebee36;"></i> </a>
-                <i class="fab fa-html5" style="color: #f01c38;"></i>
-                <i class="fab fa-css3-alt" style="color: #f0711c;"></i>
-                <a href="https://www.django-project.com/">
-                    <img width="35" height="40" src="https://img.icons8.com/color/48/django.png" alt="django"/>
-                </a>
-            
+                <div class="skill-item" title="Python">
+                    <i class="fab fa-python" style="color: #0074d9;"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skill-item" title="Django">
+                    <i class="fab fa-django" style="color: #092e20;"></i>
+                    <span>Django</span>
+                </div>
+                <div class="skill-item" title="JavaScript">
+                    <i class="fab fa-js" style="color: #ebee36;"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-item" title="React">
+                    <i class="fab fa-react" style="color: #61dafb;"></i>
+                    <span>React</span>
+                </div>
+                <div class="skill-item" title="Docker">
+                    <i class="fab fa-docker" style="color: #2496ed;"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="skill-item" title="PostgreSQL">
+                    <i class="fas fa-database" style="color: #336791;"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="skill-item" title="AWS">
+                    <i class="fab fa-aws" style="color: #ff9900;"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="skill-item" title="Git">
+                    <i class="fab fa-git" style="color: #f1502f;"></i>
+                    <span>Git</span>
+                </div>
             </div>
-            
-        </div>
-    </div>
-    <section id="projects">
-        <div class="projects_container">
-            <h1>My Projects</h1>
-            <!--  Adding Filter            -->
-            <div class="filter-container">
-                <button class="filter-btn" data-category="all">All Projects</button>
-                <button class="filter-btn" data-category="backend">Backend Projects</button>
-                <button class="filter-btn" data-category="cloud">Cloud Projects</button>
-            </div>
-            <div class="card_container">
-                <article class="card_article">
-                    <img src="./images/Anne.PNG" alt="image" class="card_img"  > <!-- width ='380px' height="250px" -->
-                    <div class="card_data">
-                        <span class="card_description">Tribute Page</span>
-                        <h2 class="class_title">A tribute page for Anne Frank</h2>
-                        <a href="https://codepen.io/alexpeain/full/poVWGZz" class="card_button">Read More!</a>
-                    </div>
-                </article>
-
-                <article class="card_article">
-                    <img src="./images/mb1.png" alt="image" class="card_img" width ='350px' height="250px" >
-                    
-                    <div class="card_data">
-                        <span class="card_description">Coming Soon</span>
-                        <h2 class="class_title">Myanmar Book Reviews Project</h2>
-                        <a href="https://github.com/Alexpeain/myanmar-bookreviews" class="card_button">Read More!</a>
-                    </div>
-                </article>
-            <!-- ... other projects ... -->
-
-            <article class="backend_project" data-category="backend">
-                <div class="backend_project_data">
-                    <span class="project_description">Backend Project</span>
-                    <h2 class="project_title">Task Tracker CLI</h2>
-                    <p class="project_text">The Task Tracker CLI is a command-line interface application to track and manage tasks.</p>
-                    <a href="https://github.com/Alexpeain/Task-Tracker-Cli" class="project_button">View on GitHub</a>
-                </div>
-            </article>
-
-            <!-- Additional backend projects -->
-            <article class="backend_project" data-category="backend">
-                <div class="backend_project_data">
-                    <span class="project_description">Backend Project</span>
-                    <h2 class="project_title">Expenses Tracker CLI</h2>
-                    <p class="project_text">A command-line interface (CLI) application for tracking expenses, allowing users to create, view, update, and delete expense records efficiently.</p>
-                    <a href="https://github.com/Alexpeain/expenses-tracker-cli" class="project_button">View on GitHub</a>
-                </div>
-            </article>
-
-            <article class="backend_project" data-category="backend">
-                <div class="backend_project_data">
-                    <span class="project_description">Backend Project</span>
-                    <h2 class="project_title">Django Blog API</h2>
-                    <p class="project_text">A RESTful API built with Django for managing blog posts, enabling users to create, read, update, and delete content efficiently. Features include user authentication and authorization.</p>
-                    <a href="https://github.com/Alexpeain/Blog-API-Django" class="project_button">View on GitHub</a>
-                </div>
-            </article>
-
-            <!-- More projects as needed -->
-            <article class="backend_project" data-category="backend">
-                <div class="backend_project_data">
-                    <span class="project_description">Backend Project</span>
-                    <h2 class="project_title">Todolist API</h2>
-                    <p class="project_text">A RESTful API built with Django for managing to-do lists, enabling users to create, read, update, and delete tasks efficiently. Features include user authentication.</p>
-                    <a href="https://github.com/Alexpeain/todolist-api" class="project_button">View on GitHub</a>
-                </div>
-            </article>
-
-            <!--    Cloud Projects           -->
-            <article class="backend_project" data-category="cloud">
-                <div class="backend_project_data">
-                    <span class="project_description">Cloud Project</span>
-                    <h2 class="project_title">Event-Driven-Notification-System</h2>
-                    <p class="project_text"> The system fetches data from an external API, processes it using AWS Lambda, and sends notifications to subscribers based on the game status.</p>
-                    <a href="https://github.com/Alexpeain/Event-Driven-Notification-System" class="project_button">View on GitHub</a>
-                </div>
-            </article>
-
-            <article class="backend_project" data-category="cloud">
-                <div class="backend_project_data">
-                    <span class="project_description">Cloud Project</span>
-                    <h2 class="project_title">NBA Data Lake with AWS Services</h2>
-                    <p class="project_text">A data lake fetches NBA player data from an external API, stores it in an S3 bucket, and uses Glue to create a database and table for querying the data with Athena.</p>
-                    <a href="https://github.com/Alexpeain/nba-data-lake" class="project_button">View on GitHub</a>
-                </div>
-            </article>
-
-            <article class="backend_project hidden" data-category="cloud">
-                <div class="backend_project_data">
-                    <span class="project_description">Cloud Project</span>
-                    <h2 class="project_title">Weather data collection and storage system</h2>
-                    <p class="project_text"> A simple weather data collection built with Python that fetches weather data from an API and stores it in an AWS S3 bucket.</p>
-                    <a href="https://github.com/Alexpeain/weather-dashboard-aws" class="project_button">View on GitHub</a>
-                </div>
-            </article>
-        </div>
-        
-        <div class="button_container">
-            <button id="seeMoreButton">See More</button>
-        </div>
-    </div>
-    </section>
-    <section id="contact">
-        <h1>Contact Me!</h1>
-        <div class="social-medias">
-            <a href="https://www.linkedin.com/in/this-is-nang-seng-lean-peain" class="social-media" ><i class="ri-linkedin-box-fill"></i>
-            <p>Linkedin</p></a>
-            <a href="https://github.com/Alexpeain" class="social-media"><i class="ri-github-fill"></i><p>Github</p></a>
-            <!-- <a href="https://www.threads.net/@nawnis_slp" class="social-media"><i class="ri-threads-line"></i>
-            <p>threads</p></a> -->
-            <a href="https://www.twitter.com/alexdocoding" class="social-media"><i class="ri-twitter-x-fill"></i>
-            <p>twitter-X</p></a>
-            <a href="mailto:nang.senglean.pein@gmail.com" class="social-media"><i class="ri-mail-fill"></i><p>Email</p></a>
         </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.js"></script>
-<script>
 
-    var typed=new Typed(".input",{
-            strings:["Backend Developer","Python Developer"],
-            typedSpeed:70,
-            backSpeed:55,
-            loop:true
-        })
+    <!-- Projects Section -->
+    <section id="projects" class="projects-container" aria-labelledby="projects-title">
+        <h2 id="projects-title">Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Myanmar Book Reviews</h3>
+                    <div class="project-badges">
+                        <span class="badge">Django</span>
+                        <span class="badge">PostgreSQL</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">AWS</span>
+                    </div>
+                </div>
+                <p>Full-stack book review platform connecting Myanmar readers. Built REST APIs with Django, containerized with Docker, deployed on AWS EC2 with automated CI/CD pipelines.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Alexpeain/myanmar-book-reviews" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    <a href="#" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </article>
 
-    
-        document.addEventListener('DOMContentLoaded', function() {
-        const projects = document.querySelectorAll('.backend_project, .card_article'); // Select all project elements
-        const seeMoreButton = document.getElementById('seeMoreButton');
-        let visibleCount = 6; // Start with 6 visible projects
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>DSA NagBot</h3>
+                    <div class="project-badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">Telegram</span>
+                        <span class="badge">Ollama AI</span>
+                    </div>
+                </div>
+                <p>Telegram bot for tracking DSA practice progress. Integrates Ollama AI for problem hints, GitHub for progress sync, and provides daily challenge tracking with detailed analytics.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Alexpeain/dsa-nagbot" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://t.me/dsa_nagbot" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i> Try Bot</a>
+                </div>
+            </article>
 
-        // Initially hide all projects beyond the first 6
-        projects.forEach((project, index) => {
-            if (index >= visibleCount) {
-                project.classList.add('hidden');
-            }
-        });
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Shan Proverbs Corpus</h3>
+                    <div class="project-badges">
+                        <span class="badge">NLP</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">n8n</span>
+                    </div>
+                </div>
+                <p>Language preservation project building a tokenized corpus of Shan proverbs. Combines manual curation with automation pipelines to archive and digitize cultural knowledge.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Alexpeain/shan-proverbs" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
 
-        seeMoreButton.addEventListener('click', function() {
-            // Show the next 3 projects
-            const hiddenProjects = Array.from(projects).filter(project => project.classList.contains('hidden'));
-            if (hiddenProjects.length > 0) {
-                const nextProjects = hiddenProjects.slice(0, 3); // Get the next 3 hidden projects
-                nextProjects.forEach(project => project.classList.remove('hidden')); // Show them
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Accountability Board</h3>
+                    <div class="project-badges">
+                        <span class="badge">Django</span>
+                        <span class="badge">React</span>
+                        <span class="badge">PostgreSQL</span>
+                    </div>
+                </div>
+                <p>Full-stack accountability app for tracking goals and habits. Django REST backend with React frontend, real-time updates, and detailed progress analytics.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Alexpeain/accountability-board" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+        </div>
+    </section>
 
-                // Update the visible count
-                visibleCount += nextProjects.length;
+    <!-- Contact Section -->
+    <section id="contact" class="contact-container" aria-labelledby="contact-title">
+        <h2 id="contact-title">Let's Connect</h2>
+        <p>I'm open to opportunities and discussions about backend development, DevOps, and language preservation projects. Feel free to reach out.</p>
+        <div class="contact-methods">
+            <a href="mailto:nang.senglean.pein@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://github.com/Alexpeain" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/alexpeain" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://medium.com/@tonghsengsom" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-medium"></i> Blog
+            </a>
+        </div>
+    </section>
 
-                // Hide the button if no more projects are hidden
-                if (hiddenProjects.length <= 3) {
-                    seeMoreButton.style.display = 'none';
-                }
-            }
-        });
-    });
+    <footer>
+        <p>&copy; 2026 Alex Peain. All rights reserved.</p>
+    </footer>
 
-    // adding Filter
-    document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projects = document.querySelectorAll('article');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove the 'active' class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add the 'active' class to the clicked button
-            this.classList.add('active');
-
-            const category = this.getAttribute('data-category');
-
-            // Show or hide projects based on the selected category
-            projects.forEach(project => {
-                if (category === 'all' || project.getAttribute('data-category') === category) {
-                    project.style.display = 'block';
-                } else {
-                    project.style.display = 'none';
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
-    });
-});
-</script>
-    <footer>Created By Alex Peain Nov 2023</footer>
+    </script>
 </body>
 </html>

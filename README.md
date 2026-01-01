@@ -44,6 +44,18 @@ Self-taught full-stack developer with **5+ years of Python experience** and **2+
 - Fitness tracking application with Django backend and Next.js frontend
 - Real-time workout logging and progress tracking
 
+### GameDayAPI
+**Django + PostgreSQL + Docker + AWS**
+- REST API for game event management and scheduling
+- - Cloud deployment with containerized services
+  - - [View on GitHub](https://github.com/Alexpeain/GameDayAPI)
+   
+    ### Event-Driven Notification System
+    **Python + Kafka + Docker + AWS + Event Streaming**
+    - Event-driven architecture for real-time notifications
+     - Kafka-based message streaming with scalable cloud infrastructure
+     - [View on GitHub](https://github.com/Alexpeain/Event-Driven-Notification-System)
+
 ## Skills & Technologies
 
 **Backend Development**

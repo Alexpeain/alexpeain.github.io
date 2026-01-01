@@ -209,5 +209,46 @@
             });
         });
     </script>
+
+        <!-- Visitor Counter -->
+    <div id="visitor-counter" style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
+        <p>Visitors: <span id="visit-count">0</span></p>
+    </div>
+
+    <script>
+        // Initialize visitor counter using localStorage
+        function initVisitorCounter() {
+            const counterKey = 'alexpeain-portfolio-visits';
+            let visitCount = localStorage.getItem(counterKey);
+            
+            if (visitCount === null) {
+                visitCount = 1;
+            } else {
+                visitCount = parseInt(visitCount) + 1;
+            }
+            
+            localStorage.setItem(counterKey, visitCount);
+            document.getElementById('visit-count').textContent = visitCount;
+            
+            // Also send to a remote counter (optional)
+            logVisitToRemote();
+        }
+        
+        // Optional: Log to CountAPI for accurate remote visitor tracking
+        function logVisitToRemote() {
+            const counterUrl = 'https://api.countapi.xyz/hit/alexpeain.github.io/visits';
+            fetch(counterUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Display remote count if available
+                    const remoteCount = data.value;
+                    document.getElementById('visit-count').textContent = remoteCount;
+                })
+                .catch(error => console.log('Remote counter unavailable, using local count'));
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initVisitorCounter);
+    </script>
 </body>
 </html>

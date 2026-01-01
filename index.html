@@ -200,6 +200,11 @@
             <a href="https://medium.com/@tonghsengsom" class="contact-link" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-medium"></i> Blog
             </a>
+
+            <!-- Twitter icon (from your example) -->
+            <a href="https://twitter.com/alexdocoding" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-left:8px;">
+                <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="alexdocoding" height="30" width="40" />
+            </a>
         </div>
     </section>
 
@@ -226,7 +231,7 @@
     </div>
 
     <script>
-        // Initialize visitor counter using localStorage
+        // Initialize visitor counter using localStorage and remote CountAPI
         function initVisitorCounter() {
             const counterKey = 'alexpeain-portfolio-visits';
             let visitCount = localStorage.getItem(counterKey);
@@ -238,25 +243,32 @@
             }
             
             localStorage.setItem(counterKey, visitCount);
+            // show local count first (fallback)
             document.getElementById('visit-count').textContent = visitCount;
             
-            // Also send to a remote counter (optional)
+            // Also send to a remote counter (CountAPI) and display the remote total
             logVisitToRemote();
         }
         
-        // Optional: Log to CountAPI for accurate remote visitor tracking
+        // Use CountAPI to increment and fetch the total visits
+        // - hit endpoint increments and returns the new value
+        // - get endpoint returns the current value without incrementing
         function logVisitToRemote() {
-            const counterUrl = 'https://api.countapi.xyz/hit/alexpeain.github.io/visits';
-            fetch(counterUrl)
+            const hitUrl = 'https://api.countapi.xyz/hit/alexpeain.github.io/visits';
+            fetch(hitUrl)
                 .then(response => response.json())
                 .then(data => {
-                    // Display remote count if available
-                    const remoteCount = data.value;
-                    document.getElementById('visit-count').textContent = remoteCount;
+                    if (data && typeof data.value === 'number') {
+                        // Display remote (total) count if available
+                        document.getElementById('visit-count').textContent = data.value;
+                    }
                 })
                 .catch(error => console.log('Remote counter unavailable, using local count'));
         }
         
+        // If you only want to read the remote total without incrementing, use:
+        // fetch('https://api.countapi.xyz/get/alexpeain.github.io/visits').then(...)
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', initVisitorCounter);
     </script>

@@ -236,6 +236,7 @@ section {
 
 #about h2 {
     margin-bottom: 1.5rem;
+        text-align: center;
 }
 
 #about p {
@@ -260,6 +261,7 @@ section {
 .tech-stack h2 {
     margin-bottom: 2rem;
     font-style: italic;
+        text-align: center;
 }
 
 /* Enforce a 4-column grid for tech icons, center items, and keep responsiveness */

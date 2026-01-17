@@ -264,6 +264,10 @@ section {
         text-align: center;
 }
 
+#skills-title {
+    text-align: center !important;
+}
+
 /* Enforce a 4-column grid for tech icons, center items, and keep responsiveness */
 .about_skills-content {
     display: grid;

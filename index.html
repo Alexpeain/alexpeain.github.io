@@ -3,30 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="description" content="Alex Peain - Backend Developer specializing in Python, Django, APIs, and DevOps. View my portfolio of production projects.">
+    <meta name="keywords" content="backend developer, Python, Django, APIs, DevOps, AWS, Docker">
+    <meta name="author" content="Alex Peain">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Alex Peain - Backend Developer & Portfolio">
+    <meta property="og:description" content="Self-taught backend developer with 5+ years Python experience. Specializing in Django, REST APIs, DevOps.">
+    <meta property="og:image" content="./images/AP(2).png">
+    <meta property="og:url" content="https://alexpeain.github.io">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0074d9">
+    
+    <title>Alex Peain - Backend Developer</title>
+    
+    <link rel="icon" type="image/x-icon" href="./images/AP(2).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <nav id="nav-bar" aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="#welcome-section" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#tech-skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#tech">Tech</a></li>
-        </ul>
-    </nav>
-    <section id="about" style="text-align: center;">
-        <h2>About</h2>
-        <p>Here is some information about me.</p>
+
+    <!-- Hero Section -->
+    <section id="welcome-section" class="welcome-container" aria-labelledby="hero-title">
+        <div class="welcome-image">
+            <img src="./images/hide/nslp.jpg" alt="Alex Peain, Backend Developer" loading="eager" width="300" height="300">
+        </div>
+        <div class="welcome-text">
+            <h5>Hi, I'm  Alex Peain</h5>
+            <h1 id="hero-title">Backend Developer</h1>
+            <p>Self-taught full-stack developer with 5+ years of Python experience, specializing in Django REST APIs, DevOps practices. Currently seeking junior backend role.
+            <div class="btn-group">
+                <a href="https://docs.google.com/document/d/1BCXibqYSBEobN49U12pqgGJJr_haS8FhJ0XxIKeX0Zc/edit?usp=sharing" class="btn active" download rel="noopener noreferrer">Download CV</a>
+                <a href="mailto:nang.senglean.pein@gmail.com" class="btn">Contact Me</a>
+            </div>
+        </div>
     </section>
-    <section id="tech" style="text-align: center;">
-        <h2>Tech</h2>
-        <p>Technologies I work with.</p>
-        <p><a href="https://twitter.com/" class="fab fa-twitter"></a> Follow me on Twitter!</p>
+
+    <!-- About Section -->
+    <section id="about" class="about-container" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
+        <p>I'm a self-taught developer from Myanmar passionate about building production-ready backend systems. I've spent the last 5 years mastering Python and 2+ years deepening my Django experience.
+        <p>I'm also passionate about NLP and language preservation, building tools for underrepresented languages like Shan.</p>
     </section>
+
+    <!-- Tech Skills Section -->
+<section id="tech-skills" class="tech-skill-container" aria-labelledby="skills-title">
+  <div class="tech-stack">
+    <h2 id="skills-title">Tech Stack</h2>
+    <div class="about_skills-content grid">
+
+      <div class="skill-item" title="Python">
+        <i class="fab fa-python" style="color: #3776ab;"></i>
+        <span>Python</span>
+      </div>
+
+      <div class="skill-item" title="Django">
+        <i class="fas fa-code" style="color: #092e20;"></i>
+        <span>Django</span>
+      </div>
+
+      <div class="skill-item" title="JavaScript">
+        <i class="fab fa-js" style="color: #f7df1e;"></i>
+        <span>JavaScript</span>
+      </div>
+
+      <div class="skill-item" title="React">
+        <i class="fab fa-react" style="color: #61dafb;"></i>
+        <span>React</span>
+      </div>
+
+      <div class="skill-item" title="Docker">
+        <i class="fas fa-box" style="color: #2496ed;"></i>
+        <span>Docker</span>
+      </div>
+
+      <div class="skill-item" title="PostgreSQL">
+        <i class="fas fa-database" style="color: #336791;"></i>
+        <span>PostgreSQL</span>
+      </div>
+
+      <div class="skill-item" title="AWS">
+        <i class="fas fa-cloud" style="color: #ff9900;"></i>
+        <span>AWS</span>
+      </div>
+
+      <div class="skill-item" title="Git">
+        <i class="fab fa-github" style="color: #f1502f;"></i>
+        <span>Git</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-container" aria-labelledby="projects-title">
+        <h2 id="projects-title">Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Myanmar Book Reviews</h3>
+                    <div class="project-badges">
+                        <span class="badge">Django</span>
+                        <span class="badge">PostgreSQL</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">AWS</span>
+                    </div>
+                </div>
+                <p>Full-stack book review platform connecting Myanmar readers. Built REST APIs with Django, containerized with Docker, deployed on AWS EC2 with automated CI/CD pipelines.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Alexpeain/myanmar-bookreviews" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    <a href="#" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo Coming Soon</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>DSA NagBot</h3>
+                    <div class="project-badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">Telegram</span>
+                        <span class="badge">Ollama AI</span>
+                    </div>
+                </div>
+                <p>Telegram bot for tracking DSA practice progress. Integrates Ollama AI for problem hints, GitHub for progress sync, and provides daily challenge tracking with detailed analytics.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Alexpeain/dsa-nagbot" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://t.me/dsa_nagbot" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i> Coming Soon</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Shan Proverbs Corpus</h3>
+                    <div class="project-badges">
+                        <span class="badge">NLP</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">n8n</span>
+                    </div>
+                </div>
+                <p>Language preservation project building a tokenized corpus of Shan proverbs. Combines manual curation with automation pipelines to archive and digitize cultural knowledge.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Alexpeain/shan-proverbs" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Accountability Board</h3>
+                    <div class="project-badges">
+                        <span class="badge">Django</span>
+                        <span class="badge">React</span>
+                        <span class="badge">PostgreSQL</span>
+                    </div>
+                </div>
+                <p>Full-stack accountability app for tracking goals and habits. Django REST backend with React frontend, real-time updates, and detailed progress analytics.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Alexpeain/accountability-board" class="link-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-container" aria-labelledby="contact-title">
+        <h2 id="contact-title">Let's Connect</h2>
+        <p>I'm open to opportunities and discussions about backend development, DevOps, and language preservation projects. Feel free to reach out.</p>
+        <div class="contact-methods">
+            <a href="mailto:nang.senglean.pein@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://github.com/Alexpeain" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/this-is-nang-seng-lean-peain" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://medium.com/@tonghsengsom" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-medium"></i> Blog
+            </a>
+
+            <!-- Twitter icon (from your example) -->
+            <a href="https://twitter.com/alexdocoding" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-left:8px;">
+                <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="alexdocoding" height="30" width="40" />
+            </a>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Alexpeain</p>
+        <p>&copy; 2026 Alex Peain. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+        <!-- Visitor Counter -->
+    <div id="visitor-counter" style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
+        <p>Visitors: <span id="visit-count">0</span></p>
+    </div>
+
+    <script>
+        // Initialize visitor counter using localStorage and remote CountAPI
+        function initVisitorCounter() {
+            const counterKey = 'alexpeain-portfolio-visits';
+            let visitCount = localStorage.getItem(counterKey);
+            
+            if (visitCount === null) {
+                visitCount = 1;
+            } else {
+                visitCount = parseInt(visitCount) + 1;
+            }
+            
+            localStorage.setItem(counterKey, visitCount);
+            // show local count first (fallback)
+            document.getElementById('visit-count').textContent = visitCount;
+            
+            // Also send to a remote counter (CountAPI) and display the remote total
+            logVisitToRemote();
+        }
+        
+        // Use CountAPI to increment and fetch the total visits
+        // - hit endpoint increments and returns the new value
+        // - get endpoint returns the current value without incrementing
+        function logVisitToRemote() {
+            const hitUrl = 'https://api.countapi.xyz/hit/alexpeain.github.io/visits';
+            fetch(hitUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && typeof data.value === 'number') {
+                        // Display remote (total) count if available
+                        document.getElementById('visit-count').textContent = data.value;
+                    }
+                })
+                .catch(error => console.log('Remote counter unavailable, using local count'));
+        }
+        
+        // If you only want to read the remote total without incrementing, use:
+        // fetch('https://api.countapi.xyz/get/alexpeain.github.io/visits').then(...)
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initVisitorCounter);
+    </script>
 </body>
 </html>

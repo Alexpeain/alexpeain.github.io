@@ -38,7 +38,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.4;
 }
-
 h1 { font-size: 3rem; color: var(--accent-primary); }
 h2 { font-size: 2rem; color: var(--bkg); }
 h3 { font-size: 1.5rem; color: var(--accent-primary); }
@@ -150,14 +149,15 @@ section {
 /* Buttons */
 .btn-group {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 1rem; /* spacing between buttons */
+    flex-wrap: wrap; /* allow wrapping on small screens */
     margin-top: 2rem;
+    align-items: center; /* vertically center buttons */
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 10px 20px; /* slightly reduced default padding for a more compact look */
     background-color: transparent;
     color: var(--base-white);
     border: 2px solid var(--text-light);
@@ -167,6 +167,13 @@ section {
     transition: all var(--transition);
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+
+    /* New rules to keep buttons compact and prevent them from stretching */
+    width: auto;
+    max-width: 220px; /* ensures buttons don't grow too wide on large screens */
+    white-space: nowrap; /* keep label on a single line */
+    text-align: center;
+    flex: 0 0 auto; /* prevent flex children from growing */
 }
 
 .btn:hover {
@@ -214,12 +221,15 @@ section {
     font-style: italic;
 }
 
+/* Enforce a 4-column grid for tech icons, center items, and keep responsiveness */
 .about_skills-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(4, minmax(80px, 1fr)); /* 4 items per row */
     gap: 2rem;
-    max-width: 600px;
+    max-width: 900px; /* allow enough width for 4 columns */
     margin: 0 auto;
+    justify-items: center; /* center icons horizontally in each cell */
+    align-items: center;   /* center icons vertically */
 }
 
 .skill-item {
@@ -454,9 +464,11 @@ footer p {
         padding: 2rem 1rem;
     }
 
+    /* For tablets and small desktops, show 2 columns */
     .about_skills-content {
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        grid-template-columns: repeat(2, minmax(60px, 1fr));
         gap: 1.5rem;
+        max-width: 600px;
     }
 
     .projects-grid {
@@ -489,8 +501,9 @@ footer p {
     }
 
     .btn {
-        padding: 10px 20px;
+        padding: 8px 14px; /* reduce padding further on very small screens */
         font-size: 0.9rem;
+        max-width: 180px;
     }
 
     .nav-links {

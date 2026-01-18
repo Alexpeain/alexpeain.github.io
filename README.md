@@ -4,7 +4,7 @@ Personal portfolio showcasing backend development projects, technical skills, an
 
 ## About Me
 
-Self-taught full-stack developer with **5+ years of Python experience** and **2+ years of Django specialized**. I build production-ready applications focusing on backend architecture, API design, and DevOps practices. My projects span NLP, automation bots, and web applications deployed on AWS and Docker.
+Self-taught backend developer with **5+ years of Python experience** and **2+ years of Django specialized**. I build production-ready applications focusing on backend architecture, API design, and DevOps practices. My projects span NLP, automation bots, and web applications deployed on AWS and Docker.
 
 - 🎯 **Target Role:** Junior Backend Developer (remote or Japan-based)
 - 🛠 **Tech Stack:** Python, Django, Django REST Framework, PostgreSQL, Docker, AWS EC2, GitHub Actions, React (frontend)

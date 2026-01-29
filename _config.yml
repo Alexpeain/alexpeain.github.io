@@ -13,7 +13,7 @@ permalink: /blog/:year/:month/:day/:title.html
 theme: minima
 
 # This allows the excerpts to show on the homepage
-show_excerpts: true
+show_excerpts: false
 
 plugins:
   - jekyll-feed

@@ -20,6 +20,7 @@ I thought it would be very interesting over years to comeback and read who I was
 
 I am going to blend it with the way I truly am ,or reflection of who I am each days.
 
-![1000243884.jpg](Day%2012%20Dev%20Journey%20create%20blog%20using%20GitHub%20pages/1000243884.jpg)
+![Nawn](/images/Nawn.jpg)
+
 
 ##

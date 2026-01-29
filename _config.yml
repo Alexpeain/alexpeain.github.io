@@ -10,8 +10,37 @@ baseurl: ""               # root site
 # Make posts live under /blog/...
 permalink: /blog/:year/:month/:day/:title.html
 
-theme: minima
+remote_theme: mmistakes/minimal-mistakes
 
+# Minimal Mistakes theme settings
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Footer
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/alexdocoding"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Alexpeain"
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      toc: true
+      toc_label: "Table of Contents"
+      toc_sticky: true
 # This allows the excerpts to show on the homepage
 show_excerpts: false
 

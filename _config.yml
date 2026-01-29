@@ -11,6 +11,7 @@ baseurl: ""              # root site
 permalink: /blog/:year/:month/:day/:title.html
 
 theme: minima
+show_excerpts: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

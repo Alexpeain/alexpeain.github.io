@@ -4,12 +4,13 @@ author:
   name: "Alex Peain"
   email: "alexpeain@gmail.com"
 
-url: "https://alexpeain.github.io"   # main site
-baseurl: "/blog"                     # blog lives at /blog
+url: "https://alexpeain.github.io/blog"
+baseurl: ""          # because this Jekyll site itself is served at /blog
 
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 twitter_username: alexdocoding
 github_username: Alexpeain

@@ -1,6 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+title: "Alex's Dev Journey"
 ---
+
+Welcome to my dev journey blog.
+
+I write about backend development, Django, REST APIs, DevOps, and learning notes.

@@ -1,0 +1,19 @@
+title: "Alex's Dev Journey"
+description: "Developer journey blog from Alex Peain – backend, Django, APIs, DevOps, and learning notes."
+author:
+  name: "Alex Peain"
+  email: "alexpeain@gmail.com"
+
+url: "https://alexpeain.github.io"   # main site
+baseurl: "/blog"                     # blog lives at /blog
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+twitter_username: alexdocoding
+github_username: Alexpeain
+
+social:
+  twitter: alexdocoding
+  github: "https://github.com/Alexpeain"

@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Day 12 – Dev Journey: create blog using GitHub Pages"
+date: 2026-01-29
+---
+
 # Day 12 :Dev Journey create blog using GitHub pages
 
 ## Date & Time

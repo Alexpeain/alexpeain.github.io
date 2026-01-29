@@ -1,6 +1,7 @@
 ---
 layout: home
 title: "Alex's Dev Journey"
+permalink: /blog/
 ---
 
 Welcome to my dev journey blog.

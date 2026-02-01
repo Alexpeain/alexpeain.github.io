@@ -144,6 +144,7 @@ permalink: /blog/
       </ul>
     </section>
   </main>
+  </div>
       
 
 <script>

@@ -62,11 +62,11 @@ permalink: /blog/
     line-height: 1.6;
   }
   
-  .month-section {
+  .recent-posts {
     margin-bottom: 3rem;
   }
   
-  .month-heading {
+  .section-heading {
     font-size: 1.5rem;
     color: #24292f;
     margin-bottom: 1.25rem;
@@ -124,21 +124,18 @@ permalink: /blog/
       <p>Welcome to my dev journey blog. I write about backend development, Django, REST APIs, DevOps, and learning notes.</p>
     </div>
     
-    {% for month_group in posts_by_month %}
-      {% assign month_date = month_group.name | append: '-01' | date: '%B %Y' %}
-      <section id="{{ month_group.name }}" class="month-section">
-        <h2 class="month-heading">{{ month_date }}</h2>
-        <ul class="posts-list">
-          {% for post in month_group.items %}
-            <li>
-              <div class="post-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-    {% endfor %}
+    <section class="recent-posts">
+      <h2 class="section-heading">Recent posts</h2>
+      <ul class="posts-list">
+        {% for post in site.posts limit:5 %}
+          <li>
+            <div class="post-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
   </main>
 </div>

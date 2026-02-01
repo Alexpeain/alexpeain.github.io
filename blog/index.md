@@ -126,7 +126,11 @@ permalink: /blog/
     
     <section class="recent-posts">
       <h2 class="section-heading">Recent posts</h2>
-      <ul class="posts-list">
+   
+        
+  /* Hide the theme's auto-generated post-list */
+  .post-list {    display: none;
+  }<ul class="posts-list">
         {% for post in site.posts limit:5 %}
           <li>
             <div class="post-title">

@@ -66,9 +66,6 @@ permalink: /blog/
     margin-bottom: 3rem;
   }
 
-    .month-section {
-    margin-bottom: 3rem;
-  }
   
   .section-heading {
     font-size: 1.5rem;
@@ -137,8 +134,8 @@ permalink: /blog/
       <h2 class="section-heading">Recent posts</h2>
    
         
-        {% for post in site.posts limit:5 %}
-          <li>
+    {% for post in site.posts %}
+          <li data-month="{{ post.date | date: '%Y-%m' }}">
             <div class="post-title">
               <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
               <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
@@ -147,22 +144,28 @@ permalink: /blog/
         {% endfor %}
       </ul>
     </section>
-
-      <!-- All Posts Grouped by Month -->
-  {% for month_group in posts_by_month %}
-    <section id="{{ month_group.name }}" class="month-section">
-      <h2 class="section-heading">{{ month_group.name | append: '-01' | date: '%B %Y' }}</h2>
-      <ul class="posts-list">
-      {% for post in month_group.items %}
-        <li>
-          <div class="post-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
-          </div>
-        </li>
-      {% endfor %}
-      </ul>
-    </section>
   {% endfor %}
   </main>
 </div>
+
+<script>
+// Filter posts by month when archive link is clicked
+function filterPosts() {
+  const hash = window.location.hash.substring(1); // Remove # from hash
+  const posts = document.querySelectorAll('.recent-posts li[data-month]');
+  
+  posts.forEach(post => {
+    if (!hash || post.getAttribute('data-month') === hash) {
+      post.style.display = '';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+
+// Run on page load
+filterPosts();
+
+// Run when hash changes
+window.addEventListener('hashchange', filterPosts);
+</script>

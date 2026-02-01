@@ -102,6 +102,11 @@ permalink: /blog/
     font-size: 0.875rem;
     margin-left: 0.5rem;
   }
+    
+  /* Hide theme's auto-generated post-list */
+  .post-list {
+    display: none;
+  }
 </style>
 
 <div class="blog-container">
@@ -128,9 +133,6 @@ permalink: /blog/
       <h2 class="section-heading">Recent posts</h2>
    
         
-  /* Hide the theme's auto-generated post-list */
-  .post-list {    display: none;
-  }<ul class="posts-list">
         {% for post in site.posts limit:5 %}
           <li>
             <div class="post-title">

@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Alex's Dev Journey"
+title: "Blog"
 permalink: /blog/
 ---
 

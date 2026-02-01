@@ -132,20 +132,19 @@ permalink: /blog/
     
     <section class="recent-posts">
       <h2 class="section-heading">Recent posts</h2>
-        <ul>    
+            <ul class="posts-list">
     {% for post in site.posts %}
           <li data-month="{{ post.date | date: '%Y-%m' }}">
             <div class="post-title">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                  <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
             </div>
           </li>
         {% endfor %}
       </ul>
     </section>
   </main>
-      </ul>
-</div>
+      
 
 <script>
 // Filter posts by month when archive link is clicked

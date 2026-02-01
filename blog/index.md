@@ -132,8 +132,7 @@ permalink: /blog/
     
     <section class="recent-posts">
       <h2 class="section-heading">Recent posts</h2>
-   
-        
+        <ul>    
     {% for post in site.posts %}
           <li data-month="{{ post.date | date: '%Y-%m' }}">
             <div class="post-title">
@@ -144,8 +143,8 @@ permalink: /blog/
         {% endfor %}
       </ul>
     </section>
-  {% endfor %}
   </main>
+      </ul>
 </div>
 
 <script>

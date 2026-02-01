@@ -4,44 +4,141 @@ title: "Alex's Dev Journey"
 permalink: /blog/
 ---
 
-Welcome to my dev journey blog.
-
-I write about backend development, Django, REST APIs, DevOps, and learning notes.
-
-<div style="display: flex; gap: 2rem;">
-  <div style="flex: 1;">
-    <h2>All posts</h2>
-    
-    {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
-    
-    <ul>
-      {% for month_group in posts_by_month %}
-        {% assign month_date = month_group.name | append: '-01' | date: '%B %Y' %}
-        <li id="{{ month_group.name }}" style="margin-bottom: 2rem;">
-          <h3 style="color: #0969da; margin-bottom: 0.5rem;">{{ month_date }}</h3>
-          <ul style="list-style: none; padding-left: 0;">
-            {% for post in month_group.items %}
-              <li style="margin-bottom: 0.5rem;">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                <span style="color: #656d76;"> - {{ post.date | date: "%b %d, %Y" }}</span>
-              </li>
-            {% endfor %}
-          </ul>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+<style>
+  .blog-container {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   
-  <div style="width: 200px; flex-shrink: 0;">
-    <h2>Archive</h2>
-    <ul style="list-style: none; padding-left: 0;">
+  .sidebar {
+    width: 220px;
+    flex-shrink: 0;
+  }
+  
+  .sidebar h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #24292f;
+  }
+  
+  .archive-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .archive-list li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .archive-list a {
+    text-decoration: none;
+    color: #0969da;
+    font-size: 0.95rem;
+  }
+  
+  .archive-list a:hover {
+    text-decoration: underline;
+  }
+  
+  .post-count {
+    color: #656d76;
+    font-size: 0.85rem;
+  }
+  
+  .main-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .intro {
+    margin-bottom: 2.5rem;
+  }
+  
+  .intro p {
+    color: #656d76;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .month-section {
+    margin-bottom: 3rem;
+  }
+  
+  .month-heading {
+    font-size: 1.5rem;
+    color: #24292f;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #d0d7de;
+  }
+  
+  .posts-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .posts-list li {
+    margin-bottom: 1rem;
+  }
+  
+  .post-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .post-title a {
+    color: #0969da;
+    text-decoration: none;
+  }
+  
+  .post-title a:hover {
+    text-decoration: underline;
+  }
+  
+  .post-date {
+    color: #656d76;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+  }
+</style>
+
+<div class="blog-container">
+  <aside class="sidebar">
+    <h3>Archive</h3>
+    {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
+    <ul class="archive-list">
       {% for month_group in posts_by_month %}
         {% assign month_date = month_group.name | append: '-01' | date: '%B %Y' %}
-        <li style="margin-bottom: 0.5rem;">
+        <li>
           <a href="#{{ month_group.name }}">{{ month_date }}</a>
-          <span style="color: #656d76;"> ({{ month_group.items | size }})</span>
+          <span class="post-count">({{ month_group.items | size }})</span>
         </li>
       {% endfor %}
     </ul>
-  </div>
+  </aside>
+  
+  <main class="main-content">
+    <div class="intro">
+      <p>Welcome to my dev journey blog. I write about backend development, Django, REST APIs, DevOps, and learning notes.</p>
+    </div>
+    
+    {% for month_group in posts_by_month %}
+      {% assign month_date = month_group.name | append: '-01' | date: '%B %Y' %}
+      <section id="{{ month_group.name }}" class="month-section">
+        <h2 class="month-heading">{{ month_date }}</h2>
+        <ul class="posts-list">
+          {% for post in month_group.items %}
+            <li>
+              <div class="post-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  </main>
 </div>

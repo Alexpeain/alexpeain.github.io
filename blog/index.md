@@ -113,7 +113,41 @@ permalink: /blog/
           .sidebar {
                   display: none;
                 }
-        }
+    
+    
+      /* Pagination Styles */
+      .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+          }
+
+        .pagination-btn {
+              padding: 0.5rem 1rem;
+              background: #24292f;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 0.9rem;
+            }
+
+        .pagination-btn:hover {
+              background: #0969da;
+            }
+
+        .pagination-btn:disabled {
+              background: #d0d7de;
+              cursor: not-allowed;
+            }
+
+        .page-info {
+              color: #656d76;
+              font-size: 0.9rem;
+            }
+      }
 </style>
 
 <div class="blog-container">
@@ -148,6 +182,13 @@ permalink: /blog/
           </li>
         {% endfor %}
       </ul>
+
+          <!-- Pagination Controls -->
+              <div class="pagination">
+                    <button id="prev-page" class="pagination-btn">← Previous</button>
+                          <span id="page-info" class="page-info">Page 1</span>
+                                <button id="next-page" class="pagination-btn">Next →</button>
+                                    </div>
     </section>
   </main>
   </div>
@@ -170,6 +211,42 @@ function filterPosts() {
 
 // Run on page load
 filterPosts();
+
+  // Pagination functionality
+  const postsPerPage = 5;
+  let currentPage = 1;
+  const allPosts = Array.from(document.querySelectorAll('.posts-list li'));
+  const totalPages = Math.ceil(allPosts.length / postsPerPage);
+
+  function showPage(page) {
+      const start = (page - 1) * postsPerPage;
+      const end = start + postsPerPage;
+
+      allPosts.forEach((post, index) => {
+            post.style.display = (index >= start && index < end) ? '' : 'none';
+          });
+
+      document.getElementById('page-info').textContent = `Page ${page} of ${totalPages}`;
+      document.getElementById('prev-page').disabled = (page === 1);
+      document.getElementById('next-page').disabled = (page === totalPages);
+    }
+
+  document.getElementById('prev-page').addEventListener('click', () => {
+      if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+          }
+    });
+
+  document.getElementById('next-page').addEventListener('click', () => {
+      if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+          }
+    });
+
+  // Initialize pagination
+  showPage(currentPage);
 
 // Run when hash changes
 window.addEventListener('hashchange', filterPosts);

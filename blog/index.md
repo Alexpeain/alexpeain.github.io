@@ -108,6 +108,13 @@ permalink: /blog/
   .post-list {
     display: none;
   }
+
+    /* Mobile: Hide Archive sidebar for full-width main content */
+    @media screen and (max-width: 768px) {
+          .sidebar {
+                  display: none;
+                }
+        }
 </style>
 
 <div class="blog-container">

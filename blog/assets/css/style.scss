@@ -289,8 +289,10 @@ pre code {
   }
 
   /* Hide Archive sidebar on mobile */
-  .home main > :nth-child(2) {
-    display: none;
+  /* Hide the Archive section and the heading */
+  main > h2:first-of-type,
+  main > h2:first-of-type + ul { 
+         display: none !important;
   }
 
   /* Full width for content when Archive is hidden */

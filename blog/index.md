@@ -5,6 +5,102 @@ permalink: /blog/
 ---
 
 <style>
+    /* CSS Variables for Theme Colors */
+    :root {
+          --bg-primary: #ffffff;
+          --bg-secondary: #f6f8fa;
+          --text-primary: #24292f;
+          --text-secondary: #656d76;
+          --text-link: #000000;
+          --border-color: #d0d7de;
+          --card-bg: #ffffff;
+          --card-shadow: rgba(0, 0, 0, 0.05);
+          --btn-bg: #24292f;
+          --btn-text: #ffffff;
+          --btn-hover: #0969da;
+        }
+
+    /* Dark Theme */
+    [data-theme="dark"] {
+          --bg-primary: #0d1117;
+          --bg-secondary: #161b22;
+          --text-primary: #e6edf3;
+          --text-secondary: #8b949e;
+          --text-link: #e6edf3;
+          --border-color: #30363d;
+          --card-bg: #161b22;
+          --card-shadow: rgba(0, 0, 0, 0.3);
+          --btn-bg: #21262d;
+          --btn-text: #c9d1d9;
+          --btn-hover: #388bfd;
+        }
+
+    /* Apply theme colors */
+    body {
+          background-color: var(--bg-primary);
+          color: var(--text-primary);
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: var(--btn-bg);
+          border: 2px solid var(--border-color);
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          transition: all 0.3s ease;
+          z-index: 1000;
+          box-shadow: 0 2px 8px var(--card-shadow);
+        }
+
+    .theme-toggle:hover {
+          transform: scale(1.1);
+          background: var(--btn-hover);
+        }
+
+    /* Update existing elements with theme variables */
+    .intro p,
+    .post-date,
+    .post-count {
+          color: var(--text-secondary) !important;
+        }
+
+    .post-title a,
+    .archive-list a {
+      color: var(--text-link) !important;
+        }
+
+    .section-heading,
+    .sidebar h3,
+    h2, h3 {
+          color: var(--text-primary) !important;
+        }
+
+    .section-heading {
+          border-bottom-color: var(--border-color) !important;
+        }
+
+    .pagination-btn {
+          background: var(--btn-bg) !important;
+          color: var(--btn-text) !important;
+        }
+
+    .pagination-btn:hover {
+          background: var(--btn-hover) !important;
+        }
+
+    .page-info {
+          color: var(--text-secondary) !important;
+        }
   .blog-container {
     display: flex;
     gap: 3rem;
@@ -154,7 +250,12 @@ permalink: /blog/
   <aside class="sidebar">
     <h3>Archive</h3>
     {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
-    <ul class="archive-list">
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <span id="theme-icon">☀️</span>
+      </button>
+      <ul class="archive-list">
       {% for month_group in posts_by_month %}
         {% assign month_date = month_group.name | append: '-01' | date: '%B %Y' %}
         <li>
@@ -248,6 +349,26 @@ filterPosts();
   // Initialize pagination
   showPage(currentPage);
 
+
+              // Theme Toggle Functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const htmlElement = document.documentElement;
+
+  // Check for saved theme preference or default to 'light'
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  htmlElement.setAttribute('data-theme', currentTheme);
+  themeIcon.textContent = currentTheme === 'dark' ? '☾️' : '☀️';
+
+  // Toggle theme function
+  themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.textContent = newTheme === 'dark' ? '☾️' : '☀️';
+    });
 // Run when hash changes
 window.addEventListener('hashchange', filterPosts);
 </script>

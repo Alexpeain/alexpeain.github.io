@@ -288,12 +288,6 @@ pre code {
     font-size: 0.9rem;
   }
 
-  /* Hide Archive sidebar on mobile */
-  /* Hide the Archive section and the heading */
-  main > h2:first-of-type,
-  main > h2:first-of-type + ul { 
-         display: none !important;
-  }
 
   /* Full width for content when Archive is hidden */
   .home .wrapper {

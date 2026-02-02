@@ -293,6 +293,11 @@ pre code {
   .home .wrapper {
     max-width: 100%;
   }
+
+     /* Hide Archive section in mobile hamburger sidebar */
+     .archive {
+            display: none !important;
+          }
 }
 
 /* Small mobile devices */

@@ -288,7 +288,12 @@ pre code {
     font-size: 0.9rem;
   }
 
-  /* Archive sidebar adjustments */
+  /* Hide Archive sidebar on mobile */
+  .home main > :nth-child(2) {
+    display: none;
+  }
+
+  /* Full width for content when Archive is hidden */
   .home .wrapper {
     max-width: 100%;
   }

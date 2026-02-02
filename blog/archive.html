@@ -1,0 +1,33 @@
+---
+layout: page
+title: Archive
+permalink: /blog/archive/
+class: nav-archive
+---
+
+<div class="archive-page">
+  <h1>Blog Archive</h1>
+  
+  {% for post in site.posts %}
+    {% assign currentYear = post.date | date: "%Y" %}
+    {% assign currentMonth = post.date | date: "%B %Y" %}
+    
+    {% if currentMonth != lastMonth %}
+      {% if lastMonth %}
+        </ul>
+      {% endif %}
+      <h2 id="{{ currentMonth | downcase | replace: ' ', '-' }}">{{ currentMonth }}</h2>
+      <ul class="archive-list">
+      {% assign lastMonth = currentMonth %}
+    {% endif %}
+    
+    <li>
+      <span class="post-date">{{ post.date | date: "%b %d" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  
+  {% if site.posts.size > 0 %}
+    </ul>
+  {% endif %}
+</div>

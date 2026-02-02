@@ -294,13 +294,13 @@ pre code {
     max-width: 100%;
   }
 
+
+     /* Hide Archive sidebar on mobile - main content takes full width */
+     .sidebar {
+            display: none;
+          }
 }
 
-  /* Hide Archive section (heading + month links) in mobile sidebar */
-  .sidebar h2:first-of-type,
-  .sidebar .archive-list {
-         display: none !important;
-       }
 
 /* Small mobile devices */
 @media screen and (max-width: 480px) {

@@ -90,8 +90,7 @@ permalink: /blog/
   }
   
   .post-title a {
-    color: #0969da;
-    text-decoration: none;
+    color: #000000;    text-decoration: none;
   }
   
   .post-title a:hover {

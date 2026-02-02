@@ -244,3 +244,111 @@ pre code {
   box-shadow: var(--shadow-md);
   margin: 2rem 0;
 }
+
+/* ============================================
+   Mobile Responsive Styles
+   ============================================ */
+
+/* Tablet and mobile devices */
+@media screen and (max-width: 768px) {
+  /* Header adjustments */
+  .site-header {
+    padding: 0.75rem 0;
+  }
+
+  .site-title {
+    font-size: 1.5rem;
+  }
+
+  /* Page layout */
+  .wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-heading {
+    font-size: 2rem;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+
+  /* Post list - make cards more compact on mobile */
+  .post-list > li {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .post-list h3 {
+    font-size: 1.25rem;
+  }
+
+  .post-excerpt {
+    font-size: 0.9rem;
+  }
+
+  /* Archive sidebar adjustments */
+  .home .wrapper {
+    max-width: 100%;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  /* Header */
+  .site-header {
+    padding: 0.5rem 0;
+  }
+
+  .site-title {
+    font-size: 1.25rem;
+  }
+
+  /* Tighter spacing */
+  .wrapper {
+    padding: 1rem 0.75rem;
+  }
+
+  .page-heading {
+    font-size: 1.75rem;
+  }
+
+  /* Smaller typography */
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.125rem; }
+
+  body {
+    font-size: 15px;
+  }
+
+  /* Compact post cards */
+  .post-list > li {
+    padding: 1rem;
+  }
+
+  .post-list h3 {
+    font-size: 1.125rem;
+  }
+
+  .post-list .post-meta {
+    font-size: 0.8rem;
+  }
+
+  .post-excerpt {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  /* Code blocks */
+  pre {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  /* Images */
+  .post-content img {
+    margin: 1.5rem 0;
+  }
+}

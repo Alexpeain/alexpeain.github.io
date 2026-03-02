@@ -1,10 +1,13 @@
+---
+layout: post
+title: "Feb-2026-Conclusion "
+date: 2026-03-02
+---
 # Day 16 Feb-Conclusion
 
 ## Date & Time
 
 Feb 28,2026 
-
-03-02-2026
 
 # **February 2026 Retrospective: Code, Chaos, and Consistency**
 

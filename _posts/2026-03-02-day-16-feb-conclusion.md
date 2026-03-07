@@ -30,7 +30,8 @@ I continued my volunteer work with Women in AI Myanmar, shifting my responsibili
 
 This month wasn't just about shipping code; I hit several roadblocks that forced me to step back and re-evaluate.
 
-- **Team Dynamics:** The hackathon was a tough lesson in leadership, as one of the supervisors and another member from their org ended up taking over and writing the entire project themselves. This forced the rest of us to just wait and present the final product without contributing to the code which I denied to do, which was incredibly frustrating experience but taught me valuable strategic lessons on how to establish boundaries in future hackathons.
+<!-- - **Team Dynamics:** The hackathon was a tough lesson in leadership, as one of the supervisors and another member from their org ended up taking over and writing the entire project themselves. This forced the rest of us to just wait and present the final product without contributing to the code which I denied to do, which was incredibly frustrating experience but taught me valuable strategic lessons on how to establish boundaries in future hackathons. -->
+
 - **Technical Hurdles:** Deploying Django with Supabase on Render came with its fair share of deployment headaches. Similarly, managing local Docker environments for the Zoomcamp continues to test my debugging patience.
 - **Personal Focus:** On a personal level, I struggled heavily with impulsive thoughts and distractions this month. Balancing a demanding sales career with a rigorous daily learning habit made it easy to occasionally lose sight of my goals or fail to complete my daily plans.
 - **Personal Development**: One of the key give me going on without too much stress is doing 5mins meditation each morning and writing journal to reset everything that fuel negative energy.That habit just help me to be more resilience in my situations.

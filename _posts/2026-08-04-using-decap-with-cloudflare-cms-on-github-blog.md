@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: Using Decap With Cloudflare CMS on Github blog
 date: 2026-08-04T23:43:00.000+06:30
 ---

@@ -1,7 +1,9 @@
 backend:
-  name: git-gateway
-  site_domain: alexpeain.netlify.app  # Points Decap to Netlify's auth endpoint
+  name: github
+  repo: alexpeain/alexpeain.github.io
   branch: main
+  base_url: https://decap-oauth-proxy.tonghsengsom.workers.dev
+  auth_endpoint: /auth
 
 media_folder: "images"
 public_folder: "/images"

@@ -10,3 +10,4 @@ end
 gem "minima", "~> 2.5"
 gem "webrick", "~> 1.8"
 gem "csv"
+gem "base64"

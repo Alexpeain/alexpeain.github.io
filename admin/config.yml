@@ -1,19 +1,19 @@
 backend:
-  name: git-gateway
-  site_domain: alexpeain.netlify.app  # Points Decap to Netlify's auth endpoint
+  name: github
+  repo: alexpeain/alexpeain.github.io
   branch: main
 
-media_folder: "images"
+media_folder: "images" # Uses your existing images directory
 public_folder: "/images"
 
 collections:
   - name: "blog"
-    label: "Blog"
+    label: "Blog Posts"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "single" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }

@@ -3,7 +3,6 @@ layout: post
 title: "Day 12 – Dev Journey: create blog using GitHub Pages"
 date: 2026-01-29
 ---
-
 # Day 12 :Dev Journey create blog using GitHub pages
 
 ## Date & Time
@@ -22,5 +21,6 @@ I am going to blend it with the way I truly am ,or reflection of who I am each d
 
 ![Nawn](/images/Nawn.jpg)
 
-
-##
+```
+Print ("hello")
+```

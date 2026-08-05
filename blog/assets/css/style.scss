@@ -37,17 +37,25 @@ body {
   gap: 1.5rem !important;
 }
 
+/* Hero Section - Floated Avatar Layout */
+.hero-section::after {
+  content: "";
+  display: table;
+  clear: both;
+  /* Prevents layout broken elements below */
+}
+
 .avatar-container {
-  width: 65px !important;
-  min-width: 65px !important;
-  height: 65px !important;
-  flex-shrink: 0 !important;
+  float: left !important;
+  width: 30px !important;
+  height: auto !important;
+  margin-right: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .avatar-img {
-  width: 65px !important;
-  height: 65px !important;
-  object-fit: contain !important;
+  width: 30px !important;
+  height: auto !important;
   display: block;
 }
 

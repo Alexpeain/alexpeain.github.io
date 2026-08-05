@@ -36,10 +36,12 @@ body {
    ============================================ */
 
 .hero-section {
-  margin-bottom: 4rem !important;
+  margin-bottom: 3.5rem !important;
+  padding-bottom: 2rem !important;
+  border-bottom: 1px solid var(--border-color) !important;
   display: flex !important;
   flex-direction: row !important;
-  align-items: center !important; /* Centers avatar vertically with text */
+  align-items: center !important;
   gap: 1.5rem !important;
 }
 
@@ -50,14 +52,14 @@ body {
   display: block !important;
 }
 
-/* Extreme specificity to override Minima's img rules */
+/* Specificity to override Minima's img rules */
 .hero-section .avatar-container .avatar-img {
   width: 72px !important;
   height: 72px !important;
   max-width: 72px !important; 
   min-width: 72px !important;
   object-fit: cover !important;
-  border-radius: 50% !important; /* Circle avatar */
+  border-radius: 50% !important;
   display: block !important;
   border: 1px solid var(--border-color) !important;
 }
@@ -91,13 +93,13 @@ body {
 }
 
 /* ============================================
-   Two-Column Layout Grid (Using CSS Grid for stability)
+   Two-Column Layout Grid (CSS Grid)
    ============================================ */
 
 .home-grid {
   display: grid !important;
   grid-template-columns: 160px 1fr !important; /* Fixed left sidebar, fluid right content */
-  gap: 4rem !important;
+  gap: 3.5rem !important;
   width: 100% !important;
   box-sizing: border-box !important;
   align-items: start !important;
@@ -109,7 +111,7 @@ body {
   letter-spacing: 0.08em !important;
   color: #999999 !important;
   text-transform: uppercase !important;
-  margin: 0 0 1.5rem 0 !important;
+  margin: 0 0 1.25rem 0 !important;
 }
 
 .section-title.text-right {
@@ -158,19 +160,19 @@ body {
   flex-direction: row !important;
   gap: 1.5rem !important;
   align-items: flex-start !important;
-  margin-bottom: 4rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .featured-image-wrapper {
-  width: 220px !important;
-  min-width: 220px !important;
+  width: 180px !important;
+  min-width: 180px !important;
   flex-shrink: 0 !important;
 }
 
-/* Target featured image specifically so it doesn't break */
+.featured-image-wrapper img,
 .featured-image-wrapper .featured-post-img {
   width: 100% !important;
-  height: 150px !important;
+  height: 130px !important;
   object-fit: cover !important;
   display: block !important;
   border-radius: 6px !important;
@@ -194,11 +196,9 @@ body {
 }
 
 .featured-title {
-  font-size: 1.2rem !important;
+  font-size: 1.15rem !important;
   font-weight: 800 !important;
   margin: 0 0 0.6rem 0 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.02em !important;
   line-height: 1.3 !important;
 }
 
@@ -211,7 +211,7 @@ body {
   font-size: 0.88rem !important;
   color: var(--text-medium) !important;
   line-height: 1.5 !important;
-  margin-bottom: 1rem !important;
+  margin-bottom: 0.75rem !important;
 }
 
 .read-more-link {
@@ -223,22 +223,10 @@ body {
   text-transform: uppercase !important;
 }
 
-/* All Posts List */
-.all-posts-section {
-  margin-top: 2.5rem !important;
-}
+/* ============================================
+   Responsive Rules (Mobile)
+   ============================================ */
 
-/* Added to match your inline HTML structure */
-.featured-heading {
-  font-size: 0.75rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  color: #999999 !important;
-  text-transform: uppercase !important;
-  margin: 0 0 1.5rem 0 !important;
-}
-
-/* Responsive */
 @media screen and (max-width: 768px) {
   .hero-section {
     flex-direction: column !important;
@@ -246,93 +234,45 @@ body {
     align-items: center !important;
     text-align: center !important;
   }
+
+  .home-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
   .quick-links-sidebar {
     position: relative !important;
     top: auto !important;
+    width: 100% !important;
   }
-  .home-grid {
-    grid-template-columns: 1fr !important;
-    gap: 3rem !important;
+
+  .quick-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.75rem 1.25rem !important;
   }
-  .section-title.text-right {
+
+  .quick-links li {
+    margin-bottom: 0 !important;
+  }
+
+  .section-title.text-right,
+  .section-header-row h3 {
     text-align: left !important;
   }
+
   .featured-card {
     flex-direction: column !important;
+    gap: 1rem !important;
   }
+
   .featured-image-wrapper {
     width: 100% !important;
     min-width: 100% !important;
   }
+
+  .featured-image-wrapper img,
   .featured-image-wrapper .featured-post-img {
-    height: 200px !important;
+    height: 180px !important;
   }
 }
-.home-grid {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 3rem;
-    width: 100%;
-  }
-
-  .quick-links-sidebar {
-    width: 170px;
-    min-width: 170px;
-    flex-shrink: 0;
-  }
-
-  .featured-card {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    margin-bottom: 2.5rem;
-  }
-
-  .featured-image-wrapper {
-    width: 180px;
-    min-width: 180px;
-    flex-shrink: 0;
-  }
-
-  /* Responsive Rules for Mobile Screens (Phones & Small Tablets) */
-  @media screen and (max-width: 768px) {
-    .home-grid {
-      flex-direction: column !important; /* Stacks sidebar and main content vertically */
-      gap: 2.5rem !important;
-    }
-
-    .quick-links-sidebar {
-      width: 100% !important;
-      min-width: 100% !important;
-    }
-
-    .quick-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem 1.5rem; /* Formats links as an easy-to-tap horizontal pill list on mobile */
-    }
-
-    .quick-links li {
-      margin-bottom: 0 !important;
-    }
-
-    .section-header-row h3 {
-      text-align: left !important; /* Aligns "RECENT POSTS" header to the left on mobile */
-    }
-
-    .featured-card {
-      flex-direction: column !important; /* Stacks post thumbnail image above the text */
-      gap: 1rem !important;
-    }
-
-    .featured-image-wrapper {
-      width: 100% !important;
-      min-width: 100% !important;
-    }
-
-    .featured-image-wrapper img {
-      height: 180px !important; /* Expands post thumbnail full-width for mobile cards */
-    }
-  }

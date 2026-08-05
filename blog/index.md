@@ -2,24 +2,8 @@
 layout: default
 title: "Home"
 ---
-
-![Alex Peain - Backend Developer]({{ "/images/my-notion-face-transparent.png" | relative_url }}){: width="20%" }
-or
-![Alex Peain - Backend Developer]({{ '/images/my-notion-face-transparent.png' | relative_url }}){: style="max-width: 20%; height: auto; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; border: 1px solid #e5e5e5;" }
-or 
+ ![Alex Peain - Backend Developer]({{ "/images/my-notion-face-transparent.png" | relative_url }}){: width="20%" }
 <div class="hero-section" markdown="1">
-  <div class="avatar-container" markdown="1">
-
-![Alex Peain - Backend Developer]({{ '/images/my-notion-face-transparent.png' | relative_url }}){: style="max-width: 20%; width: 20%; height: auto; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; border: 1px solid #e5e5e5;" class="avatar-img"}
-
-  </div>
-</div>
-<div class="hero-section">
-  <div class="avatar-container">
-    
-  ![Alex Peain - Backend Developer](../images/my-notion-face-transparent.png){: style="max-width: 20%; width: 20%; height: auto; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; border: 1px solid #e5e5e5;" class="avatar-img"}
-</div>
-
   <div class="hero-text">
     <h1 class="hero-greeting">Hi, there!</h1>
     <p class="hero-bio-lead">

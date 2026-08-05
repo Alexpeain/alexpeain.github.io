@@ -268,3 +268,71 @@ body {
     height: 200px !important;
   }
 }
+.home-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .quick-links-sidebar {
+    width: 170px;
+    min-width: 170px;
+    flex-shrink: 0;
+  }
+
+  .featured-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+  }
+
+  .featured-image-wrapper {
+    width: 180px;
+    min-width: 180px;
+    flex-shrink: 0;
+  }
+
+  /* Responsive Rules for Mobile Screens (Phones & Small Tablets) */
+  @media screen and (max-width: 768px) {
+    .home-grid {
+      flex-direction: column !important; /* Stacks sidebar and main content vertically */
+      gap: 2.5rem !important;
+    }
+
+    .quick-links-sidebar {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem; /* Formats links as an easy-to-tap horizontal pill list on mobile */
+    }
+
+    .quick-links li {
+      margin-bottom: 0 !important;
+    }
+
+    .section-header-row h3 {
+      text-align: left !important; /* Aligns "RECENT POSTS" header to the left on mobile */
+    }
+
+    .featured-card {
+      flex-direction: column !important; /* Stacks post thumbnail image above the text */
+      gap: 1rem !important;
+    }
+
+    .featured-image-wrapper {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+
+    .featured-image-wrapper img {
+      height: 180px !important; /* Expands post thumbnail full-width for mobile cards */
+    }
+  }

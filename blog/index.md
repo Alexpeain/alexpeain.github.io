@@ -4,10 +4,10 @@ title: "Home"
 ---
 
 <div class="hero-section">
-  <!-- Avatar Illustration -->
+  <!-- Avatar / Illustration -->
   <div class="avatar-container">
-    <img src="../images/my-notion-face-transparent.png" alt="Alex Peain - Backend Developer" class="avatar-img" />
-  </div>
+  <img src="../images/my-notion-face-transparent.png" alt="Alex Peain - Backend Developer" class="avatar-img" />
+</div>
 
   <h1 class="hero-greeting">Hi, there!</h1>
 
@@ -20,12 +20,10 @@ title: "Home"
   </p>
 </div>
 
-<!-- Main Two-Column Grid -->
 <div class="home-grid">
-  
-  <!-- Left Column: Quick Links Sidebar -->
+  <!-- Left Column: Quick Links -->
   <aside class="quick-links-sidebar">
-    <h3 class="section-title">QUICK LINKS</h3>
+    <h3 class="sidebar-title">QUICK LINKS</h3>
     <ul class="quick-links">
       <li>
         <a href="{{ '/about/' | relative_url }}">
@@ -55,20 +53,16 @@ title: "Home"
     </ul>
   </aside>
 
-  <!-- Right Column: Content Area -->
+  <!-- Right Column: Featured Post & All Posts List -->
   <main class="featured-content">
-    
-    <!-- Section Header (Aligned Right like reference image) -->
-    <div class="section-header-row">
-      <h3 class="section-title text-right">LATEST POST</h3>
-    </div>
+    <!-- Featured / Latest Post -->
+    <h3 class="featured-heading">LATEST POST</h3>
 
-    <!-- Featured Post Card -->
     {% assign latest_post = site.posts.first %}
     {% if latest_post %}
       <article class="featured-card">
         {% if latest_post.image %}
-          <div class="featured-image-wrapper">
+          <div class="featured-image">
             <a href="{{ latest_post.url | relative_url }}">
               <img src="{{ latest_post.image | relative_url }}" alt="{{ latest_post.title }}" />
             </a>
@@ -78,8 +72,6 @@ title: "Home"
         <div class="featured-details">
           {% if latest_post.category %}
             <span class="category-badge">{{ latest_post.category | upcase }}</span>
-          {% else %}
-            <span class="category-badge">GENERAL</span>
           {% endif %}
 
           <h2 class="featured-title">
@@ -90,21 +82,21 @@ title: "Home"
             {{ latest_post.excerpt | strip_html | truncatewords: 25 }}
           </p>
 
-          <a href="{{ latest_post.url | relative_url }}" class="read-more-link">READ MORE</a>
+          <a href="{{ latest_post.url | relative_url }}" class="read-more-link">READ MORE →</a>
         </div>
       </article>
     {% endif %}
 
-    <!-- All Posts Section -->
-    <div class="all-posts-section">
-      <h3 class="section-title">ALL POSTS</h3>
-      <ul class="posts-list">
+    <!-- All Blog Posts Section -->
+    <div class="all-posts-section" style="margin-top: 2.5rem;">
+      <h3 class="featured-heading">ALL POSTS</h3>
+      <ul class="posts-list" style="list-style: none; padding: 0; margin: 0;">
         {% for post in site.posts %}
-          <li class="post-item">
-            <a href="{{ post.url | relative_url }}" class="post-link">
+          <li style="margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border-color, #e2e8f0); padding-bottom: 0.5rem;">
+            <a href="{{ post.url | relative_url }}" style="font-weight: 600; text-decoration: none; color: var(--text-dark, #0f172a);">
               {{ post.title }}
             </a>
-            <span class="post-date">
+            <span style="font-size: 0.8rem; color: var(--text-light, #64748b);">
               {{ post.date | date: "%b %d, %Y" }}
             </span>
           </li>

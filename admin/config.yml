@@ -15,7 +15,38 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      # 1. Hidden Widget
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      
+      # 2. String & Datetime
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      
+      # 3. Image Widget (Featured Cover Photo)
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      
+      # 4. File Widget (Downloadable PDF/Resource)
+      - { label: "Attachment File", name: "file", widget: "file", required: false }
+      
+      # 5. Select Widget (Single Category Selection)
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Engineering", "Tutorials", "Projects", "General"]
+        default: "Engineering"
+        required: false
+
+      # 6. Select Widget with Multiple Selection (Tags)
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        options: ["python", "django", "jekyll", "decap-cms", "cloudflare", "web-dev"]
+        default: ["web-dev"]
+        required: false
+
+      # 7. Color Widget (Theme / Header Accent Color)
+      - { label: "Accent Color", name: "color", widget: "color", default: "#3b82f6", required: false }
+      
+      # 8. Markdown Widget (Post Body)
       - { label: "Body", name: "body", widget: "markdown" }

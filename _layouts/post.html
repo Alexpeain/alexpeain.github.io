@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+        <p class="post-meta">
+            <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+                {{ page.date | date: date_format }}
+            </time>
+
+            <!-- Display Category -->
+            {% if page.category %}
+            <span class="post-category"> • 📂 {{ page.category }}</span>
+            {% elsif page.categories.size > 0 %}
+            <span class="post-category"> • 📂 {{ page.categories | join: ", " }}</span>
+            {% endif %}
+
+            {% if page.author %}
+            • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+                    itemprop="name">{{ page.author }}</span></span>
+            {% endif %}
+        </p>
+
+        <!-- Display Tags -->
+        {% if page.tags.size > 0 %}
+        <div class="post-tags" style="margin-top: 10px;">
+            <strong>Tags:</strong>
+            {% for tag in page.tags %}
+            <span class="tag-badge"
+                style="background: #eef2ff; color: #4f46e5; padding: 3px 8px; border-radius: 4px; font-size: 0.85em; margin-right: 5px;">
+                #{{ tag }}
+            </span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="post-content e-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

@@ -1,4 +1,8 @@
---- # Front matter ensures Jekyll processes this file --- @import "minima";
+---
+# Front matter ensures Jekyll processes this file
+---
+
+@import "minima";
 
 /* ============================================
    Custom Notion-Style Theme Override
@@ -20,10 +24,11 @@ body {
   line-height: 1.6;
 }
 
-/* Page Width Container */
+/* Force page width and override Minima defaults */
 .wrapper {
   max-width: 900px !important;
   padding: 3rem 1.5rem !important;
+  margin: 0 auto !important;
 }
 
 /* ============================================
@@ -33,31 +38,32 @@ body {
 .hero-section {
   margin-bottom: 4rem !important;
   display: flex !important;
-  align-items: flex-start !important;
-  gap: 1.25rem !important;
+  flex-direction: row !important;
+  align-items: center !important; /* Centers avatar vertically with text */
+  gap: 1.5rem !important;
 }
 
 .avatar-container {
   flex-shrink: 0 !important;
-  width: 64px !important;
-  height: 64px !important;
+  width: 72px !important;
+  height: 72px !important;
+  display: block !important;
 }
 
-/* THIS IS THE FIX: max-width: 64px stops Minima from stretching it to 100% */
-.avatar-img {
-  width: 64px !important;
-  height: 64px !important;
-  max-width: 64px !important;
-  min-width: 64px !important;
+/* Extreme specificity to override Minima's img rules */
+.hero-section .avatar-container .avatar-img {
+  width: 72px !important;
+  height: 72px !important;
+  max-width: 72px !important; 
+  min-width: 72px !important;
   object-fit: cover !important;
-  border-radius: 50% !important;
+  border-radius: 50% !important; /* Circle avatar */
   display: block !important;
   border: 1px solid var(--border-color) !important;
 }
 
 .hero-text {
   flex: 1 !important;
-  padding-top: 0.25rem !important;
 }
 
 .hero-greeting {
@@ -85,17 +91,16 @@ body {
 }
 
 /* ============================================
-   Two-Column Layout Grid
+   Two-Column Layout Grid (Using CSS Grid for stability)
    ============================================ */
 
 .home-grid {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  align-items: flex-start !important;
+  display: grid !important;
+  grid-template-columns: 160px 1fr !important; /* Fixed left sidebar, fluid right content */
   gap: 4rem !important;
   width: 100% !important;
   box-sizing: border-box !important;
+  align-items: start !important;
 }
 
 .section-title {
@@ -113,12 +118,8 @@ body {
 
 /* Left Column: Sidebar */
 .quick-links-sidebar {
-  width: 160px !important;
-  min-width: 160px !important;
-  max-width: 160px !important;
-  flex-shrink: 0 !important;
   position: sticky !important;
-  top: 2rem !important;
+  top: 2rem !important; 
 }
 
 .quick-links {
@@ -149,7 +150,6 @@ body {
 
 /* Right Column: Main Content Area */
 .featured-content {
-  flex: 1 1 auto !important;
   min-width: 0 !important;
 }
 
@@ -167,7 +167,8 @@ body {
   flex-shrink: 0 !important;
 }
 
-.featured-image-wrapper img {
+/* Target featured image specifically so it doesn't break */
+.featured-image-wrapper .featured-post-img {
   width: 100% !important;
   height: 150px !important;
   object-fit: cover !important;
@@ -227,33 +228,14 @@ body {
   margin-top: 2.5rem !important;
 }
 
-.posts-list {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.post-item {
-  margin-bottom: 0.75rem !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  border-bottom: 1px dashed var(--border-color) !important;
-  padding-bottom: 0.5rem !important;
-}
-
-.post-link {
-  font-weight: 600 !important;
-  font-size: 0.9rem !important;
-  text-decoration: none !important;
-  color: var(--text-dark) !important;
-}
-
-.post-date {
-  font-size: 0.8rem !important;
-  color: var(--text-light) !important;
-  white-space: nowrap !important;
-  margin-left: 1rem !important;
+/* Added to match your inline HTML structure */
+.featured-heading {
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  color: #999999 !important;
+  text-transform: uppercase !important;
+  margin: 0 0 1.5rem 0 !important;
 }
 
 /* Responsive */
@@ -264,37 +246,25 @@ body {
     align-items: center !important;
     text-align: center !important;
   }
-
   .quick-links-sidebar {
     position: relative !important;
     top: auto !important;
   }
-
   .home-grid {
-    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
     gap: 3rem !important;
   }
-
-  .quick-links-sidebar,
-  .featured-content {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
   .section-title.text-right {
     text-align: left !important;
   }
-
   .featured-card {
     flex-direction: column !important;
   }
-
   .featured-image-wrapper {
     width: 100% !important;
     min-width: 100% !important;
   }
-
-  .featured-image-wrapper img {
+  .featured-image-wrapper .featured-post-img {
     height: 200px !important;
   }
 }

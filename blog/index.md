@@ -1,93 +1,90 @@
 ---
 layout: default
-title: "Blog"
-permalink: /blog/
+title: "Home"
 ---
 
-<div class="blog-container">
-  <!-- Sidebar: Archive Section -->
-  <aside class="sidebar">
-    <div class="sidebar-box">
-      <h3>Archive</h3>
-      {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
-      <ul class="archive-list">
-        {% for month_group in posts_by_month %}
-          {% assign month_date = month_group.name | append: '-01' | date: '%B %Y' %}
-          <li>
-            <a href="#{{ month_group.name }}">
-              <span>{{ month_date }}</span>
-              <span class="post-count">{{ month_group.items | size }}</span>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+<div class="hero-section">
+  <!-- Avatar / Illustration -->
+  <div class="avatar-container">
+    <img src="/assets/images/avatar.png" alt="Avatar Illustration" class="avatar-img" />
+  </div>
+
+  <h1 class="hero-greeting">Hi, there!</h1>
+
+  <p class="hero-bio-lead">
+    I'm <strong>Alex</strong>, and I build <strong>backend systems, APIs, and AI pipelines</strong>.
+  </p>
+
+  <p class="hero-bio-sub">
+    Welcome to my personal site. Here I share notes on Python, Django, system architecture, DevOps, and my software development journey.
+  </p>
+</div>
+
+<div class="home-grid">
+  <!-- Left Column: Quick Links -->
+  <aside class="quick-links-sidebar">
+    <h3 class="sidebar-title">QUICK LINKS</h3>
+    <ul class="quick-links">
+      <li>
+        <a href="/about/">
+          <span class="link-icon">👤</span> ABOUT ME
+        </a>
+      </li>
+      <li>
+        <a href="/projects/">
+          <span class="link-icon">📁</span> ALL PROJECTS
+        </a>
+      </li>
+      <li>
+        <a href="/blog/">
+          <span class="link-icon">📖</span> JOURNAL
+        </a>
+      </li>
+      <li>
+        <a href="/resume/">
+          <span class="link-icon">📄</span> RESUME
+        </a>
+      </li>
+      <li>
+        <a href="/contact/">
+          <span class="link-icon">✉️</span> CONTACT ME
+        </a>
+      </li>
+    </ul>
   </aside>
 
-  <!-- Main Content: Intro & Post List -->
-  <main class="main-content">
-    <div class="intro">
-      <p>Welcome to my dev journey blog. I write about backend development, Django, REST APIs, DevOps, and learning notes.</p>
-    </div>
+  <!-- Right Column: Featured / Latest Posts -->
+  <main class="featured-content">
+    <h3 class="featured-heading">LATEST POST</h3>
 
-    <section class="recent-posts">
-      <h2 class="section-heading">Recent Posts</h2>
-      <ul class="posts-list">
-        {% for post in site.posts %}
-          <li data-month="{{ post.date | date: '%Y-%m' }}">
-            <a href="{{ post.url | relative_url }}" class="post-card">
-              <div class="post-info">
-                <h3 class="post-title">{{ post.title }}</h3>
-                <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
-              </div>
+    {% assign latest_post = site.posts.first %}
+    {% if latest_post %}
+      <article class="featured-card">
+        {% if latest_post.image %}
+          <div class="featured-image">
+            <a href="{{ latest_post.url | relative_url }}">
+              <img src="{{ latest_post.image }}" alt="{{ latest_post.title }}" />
             </a>
-          </li>
-        {% endfor %}
-      </ul>
+          </div>
+        {% endif %}
 
-      <!-- Pagination -->
-      <div class="pagination">
-        <button id="prev-page" class="pagination-btn">← Previous</button>
-        <span id="page-info" class="page-info">Page 1</span>
-        <button id="next-page" class="pagination-btn">Next →</button>
-      </div>
-    </section>
+        <div class="featured-details">
+          {% if latest_post.category %}
+            <span class="category-badge">{{ latest_post.category | upcase }}</span>
+          {% endif %}
+
+          <h2 class="featured-title">
+            <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a>
+          </h2>
+
+          <p class="featured-excerpt">
+            {{ latest_post.excerpt | strip_html | truncatewords: 30 }}
+          </p>
+
+          <a href="{{ latest_post.url | relative_url }}" class="read-more-link">READ MORE →</a>
+        </div>
+      </article>
+    {% endif %}
 
   </main>
 </div>
-
-<script>
-  const postsPerPage = 5;
-  let currentPage = 1;
-  const allPosts = Array.from(document.querySelectorAll('.posts-list li'));
-  const totalPages = Math.ceil(allPosts.length / postsPerPage) || 1;
-
-  function showPage(page) {
-    const start = (page - 1) * postsPerPage;
-    const end = start + postsPerPage;
-
-    allPosts.forEach((post, index) => {
-      post.style.display = (index >= start && index < end) ? '' : 'none';
-    });
-
-    document.getElementById('page-info').textContent = `Page ${page} of ${totalPages}`;
-    document.getElementById('prev-page').disabled = (page === 1);
-    document.getElementById('next-page').disabled = (page === totalPages);
-  }
-
-  document.getElementById('prev-page').addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      showPage(currentPage);
-    }
-  });
-
-  document.getElementById('next-page').addEventListener('click', () => {
-    if (currentPage < totalPages) {
-      currentPage++;
-      showPage(currentPage);
-    }
-  });
-
-  showPage(currentPage);
-</script>

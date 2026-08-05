@@ -31,49 +31,43 @@ title: "Home"
   </aside>
 
   <!-- Right Column: Content Area -->
-  <main class="featured-content">
-    
-    <div class="section-header-row">
-      <h3 class="section-title text-right">LATEST POST</h3>
-    </div>
+ <main class="featured-content">
+  <div class="section-header-row">
+    <h3 class="section-title text-right">RECENT POSTS</h3>
+  </div>
 
-    <!-- Featured Post Card -->
-    {% assign latest_post = site.posts.first %}
-    {% if latest_post %}
-      <article class="featured-card">
-        {% if latest_post.image %}
-          <div class="featured-image-wrapper">
-            <a href="{{ latest_post.url | relative_url }}">
-              <img src="{{ latest_post.image | relative_url }}" alt="{{ latest_post.title }}" class="featured-post-img" />
-            </a>
-          </div>
-        {% endif %}
-
-        <div class="featured-details">
-         {% if latest_post.image %}
-          <div class="featured-image-wrapper" style="max-width: 220px; width: 100%;">
-            <a href="{{ latest_post.url | relative_url }}">
-          <img 
-              src="{{ latest_post.image | relative_url }}" 
-              alt="{{ latest_post.title }}" 
+  <!-- Recent Posts Loop (Displays up to 3) -->
+  {% for post in site.posts limit:3 %}
+    <article class="featured-card" style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem;">
+      
+      {% if post.image %}
+        <div class="featured-image-wrapper" style="max-width: 220px; width: 100%; flex-shrink: 0;">
+          <a href="{{ post.url | relative_url }}">
+            <img 
+              src="{{ post.image | relative_url }}" 
+              alt="{{ post.title }}" 
               class="featured-post-img" 
-              style="max-width: 220px; width: 100%; height: 160px; object-fit: cover; border-radius: 4px; display: block;" />
-           </a>
-          </div>
-         {% endif %}
-
-          <h2 class="featured-title">
-            <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a>
-          </h2>
-
-          <p class="featured-excerpt">
-            {{ latest_post.excerpt | strip_html | truncatewords: 25 }}
-          </p>
-
-          <a href="{{ latest_post.url | relative_url }}" class="read-more-link">READ MORE</a>
+              style="max-width: 220px; width: 100%; height: 160px; object-fit: cover; border-radius: 4px; display: block;" 
+            />
+          </a>
         </div>
-      </article>
-    {% endif %}
+      {% endif %}
+
+      <div class="featured-details">
+        <h2 class="featured-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+
+        <p class="featured-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 25 }}
+        </p>
+
+        <a href="{{ post.url | relative_url }}" class="read-more-link">READ MORE</a>
+      </div>
+
+    </article>
+  {% endfor %}
+</main>
 
     <!-- All Blog Posts Section -->
     <div class="all-posts-section" style="margin-top: 2.5rem;">

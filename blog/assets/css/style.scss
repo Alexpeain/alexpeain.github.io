@@ -27,34 +27,41 @@ body {
 }
 
 /* ============================================
-   Hero Section
+   Hero Section (Option 2: Floated Avatar)
    ============================================ */
 
 .hero-section {
   margin-bottom: 3rem;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1.5rem !important;
 }
 
 .avatar-container {
   width: 65px !important;
+  min-width: 65px !important;
   height: 65px !important;
-  margin-bottom: 0.75rem;
+  flex-shrink: 0 !important;
 }
 
 .avatar-img {
   width: 65px !important;
   height: 65px !important;
-  max-width: 65px !important;
-  max-height: 65px !important;
   object-fit: contain !important;
   display: block;
+}
+
+.hero-text {
+  flex: 1;
 }
 
 .hero-greeting {
   font-size: 2.2rem;
   font-weight: 800;
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 0.5rem 0;
   color: var(--text-dark);
   letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .hero-bio-lead {
@@ -67,8 +74,9 @@ body {
 .hero-bio-sub {
   font-size: 0.9rem;
   color: var(--text-light);
-  max-width: 700px;
+  max-width: 650px;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* ============================================
@@ -269,6 +277,11 @@ body {
    ============================================ */
 
 @media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
   .home-grid {
     flex-direction: column !important;
     gap: 2rem !important;

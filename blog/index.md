@@ -4,26 +4,30 @@ title: "Home"
 ---
 
 <div class="hero-section">
-  <!-- Avatar / Illustration -->
+  <!-- Avatar / Illustration (Floated Left) -->
   <div class="avatar-container">
-  <img src="../images/my-notion-face-transparent.png" alt="Alex Peain - Backend Developer" class="avatar-img" />
+    <img src="../images/my-notion-face-transparent.png" alt="Alex Peain - Backend Developer" class="avatar-img" />
+  </div>
+
+  <div class="hero-text">
+    <h1 class="hero-greeting">Hi, there!</h1>
+
+    <p class="hero-bio-lead">
+      I'm <strong>Alex Peain</strong>, and I build <strong>backend systems, APIs, and AI pipelines</strong>.
+    </p>
+
+    <p class="hero-bio-sub">
+      Welcome to my personal site. Here I share notes on Python, Django, system architecture, DevOps, and my software development journey.
+    </p>
+  </div>
 </div>
 
-  <h1 class="hero-greeting">Hi, there!</h1>
-
-  <p class="hero-bio-lead">
-    I'm <strong>Alex Peain</strong>, and I build <strong>backend systems, APIs, and AI pipelines</strong>.
-  </p>
-
-  <p class="hero-bio-sub">
-    Welcome to my personal site. Here I share notes on Python, Django, system architecture, DevOps, and my software development journey.
-  </p>
-</div>
-
+<!-- Main Two-Column Grid -->
 <div class="home-grid">
-  <!-- Left Column: Quick Links -->
+  
+  <!-- Left Column: Quick Links Sidebar -->
   <aside class="quick-links-sidebar">
-    <h3 class="sidebar-title">QUICK LINKS</h3>
+    <h3 class="section-title">QUICK LINKS</h3>
     <ul class="quick-links">
       <li>
         <a href="{{ '/about/' | relative_url }}">
@@ -53,16 +57,20 @@ title: "Home"
     </ul>
   </aside>
 
-  <!-- Right Column: Featured Post & All Posts List -->
+  <!-- Right Column: Content Area -->
   <main class="featured-content">
-    <!-- Featured / Latest Post -->
-    <h3 class="featured-heading">LATEST POST</h3>
+    
+    <!-- Section Header (Aligned Right) -->
+    <div class="section-header-row">
+      <h3 class="section-title text-right">LATEST POST</h3>
+    </div>
 
+    <!-- Featured Post Card -->
     {% assign latest_post = site.posts.first %}
     {% if latest_post %}
       <article class="featured-card">
         {% if latest_post.image %}
-          <div class="featured-image">
+          <div class="featured-image-wrapper">
             <a href="{{ latest_post.url | relative_url }}">
               <img src="{{ latest_post.image | relative_url }}" alt="{{ latest_post.title }}" />
             </a>
@@ -72,6 +80,8 @@ title: "Home"
         <div class="featured-details">
           {% if latest_post.category %}
             <span class="category-badge">{{ latest_post.category | upcase }}</span>
+          {% else %}
+            <span class="category-badge">GENERAL</span>
           {% endif %}
 
           <h2 class="featured-title">
@@ -82,7 +92,7 @@ title: "Home"
             {{ latest_post.excerpt | strip_html | truncatewords: 25 }}
           </p>
 
-          <a href="{{ latest_post.url | relative_url }}" class="read-more-link">READ MORE →</a>
+          <a href="{{ latest_post.url | relative_url }}" class="read-more-link">READ MORE</a>
         </div>
       </article>
     {% endif %}

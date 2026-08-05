@@ -15,59 +15,77 @@ title: "Home"
   </div>
 </div>
 
-<!-- Main Two-Column Grid -->
-<div class="home-grid">
+<!-- Main Two-Column Container -->
+<div class="home-grid" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 2.5rem; width: 100%;">
   
   <!-- Left Column: Quick Links Sidebar -->
-  <aside class="quick-links-sidebar">
-    <h3 class="section-title">QUICK LINKS</h3>
-    <ul class="quick-links">
-      <li><a href="{{ '/about/' | relative_url }}"><span class="link-icon">👤</span> ABOUT ME</a></li>
-      <li><a href="{{ '/projects/' | relative_url }}"><span class="link-icon">📁</span> ALL PROJECTS</a></li>
-      <li><a href="{{ '/blog/' | relative_url }}"><span class="link-icon">📖</span> JOURNAL</a></li>
-      <li><a href="{{ '/resume/' | relative_url }}"><span class="link-icon">📄</span> RESUME</a></li>
-      <li><a href="{{ '/contact/' | relative_url }}"><span class="link-icon">✉️</span> CONTACT ME</a></li>
+  <aside class="quick-links-sidebar" style="width: 200px; min-width: 200px; flex-shrink: 0;">
+    <h3 class="section-title" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; color: #999; text-transform: uppercase; margin-bottom: 1rem;">QUICK LINKS</h3>
+    <ul class="quick-links" style="list-style: none; padding: 0; margin: 0;">
+      <li style="margin-bottom: 0.65rem;">
+        <a href="{{ '/about/' | relative_url }}" style="text-decoration: none; color: #555; font-size: 0.85rem; font-weight: 600;">
+          <span class="link-icon">👤</span> ABOUT ME
+        </a>
+      </li>
+      <li style="margin-bottom: 0.65rem;">
+        <a href="{{ '/projects/' | relative_url }}" style="text-decoration: none; color: #555; font-size: 0.85rem; font-weight: 600;">
+          <span class="link-icon">📁</span> ALL PROJECTS
+        </a>
+      </li>
+      <li style="margin-bottom: 0.65rem;">
+        <a href="{{ '/blog/' | relative_url }}" style="text-decoration: none; color: #555; font-size: 0.85rem; font-weight: 600;">
+          <span class="link-icon">📖</span> JOURNAL
+        </a>
+      </li>
+      <li style="margin-bottom: 0.65rem;">
+        <a href="{{ '/resume/' | relative_url }}" style="text-decoration: none; color: #555; font-size: 0.85rem; font-weight: 600;">
+          <span class="link-icon">📄</span> RESUME
+        </a>
+      </li>
+      <li style="margin-bottom: 0.65rem;">
+        <a href="{{ '/contact/' | relative_url }}" style="text-decoration: none; color: #555; font-size: 0.85rem; font-weight: 600;">
+          <span class="link-icon">✉️</span> CONTACT ME
+        </a>
+      </li>
     </ul>
   </aside>
 
-  <!-- Right Column: Content Area -->
- <main class="featured-content">
-  <div class="section-header-row">
-    <h3 class="section-title text-right">RECENT POSTS</h3>
-  </div>
+  <!-- Right Column: Recent Posts Content -->
+  <main class="featured-content" style="flex: 1; min-width: 0;">
+    <div class="section-header-row" style="margin-bottom: 1rem;">
+      <h3 class="section-title" style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; color: #999; text-transform: uppercase; text-align: right;">RECENT POSTS</h3>
+    </div>
 
-  <!-- Recent Posts Loop (Displays up to 3) -->
-  {% for post in site.posts limit:3 %}
-    <article class="featured-card" style="display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2rem;">
-      
-      {% if post.image %}
-        <div class="featured-image-wrapper" style="max-width: 220px; width: 100%; flex-shrink: 0;">
-          <a href="{{ post.url | relative_url }}">
-            <img 
-              src="{{ post.image | relative_url }}" 
-              alt="{{ post.title }}" 
-              class="featured-post-img" 
-              style="max-width: 220px; width: 100%; height: 160px; object-fit: cover; border-radius: 4px; display: block;" 
-            />
-          </a>
+    <!-- Recent Posts Loop (Displays up to 3) -->
+    {% for post in site.posts limit:3 %}
+      <article class="featured-card" style="display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 2rem;">
+        
+        {% if post.image %}
+          <div class="featured-image-wrapper" style="width: 180px; min-width: 180px; flex-shrink: 0;">
+            <a href="{{ post.url | relative_url }}">
+              <img 
+                src="{{ post.image | relative_url }}" 
+                alt="{{ post.title }}" 
+                style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px; display: block;" 
+              />
+            </a>
+          </div>
+        {% endif %}
+
+        <div class="featured-details" style="flex: 1;">
+          <h2 class="featured-title" style="font-size: 1.1rem; font-weight: 800; margin: 0 0 0.5rem 0;">
+            <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #111;">{{ post.title }}</a>
+          </h2>
+
+          <p class="featured-excerpt" style="font-size: 0.85rem; color: #555; margin-bottom: 0.5rem; line-height: 1.5;">
+            {{ post.excerpt | strip_html | truncatewords: 20 }}
+          </p>
+
+          <a href="{{ post.url | relative_url }}" class="read-more-link" style="font-size: 0.75rem; font-weight: 700; color: #555; text-decoration: underline;">READ MORE</a>
         </div>
-      {% endif %}
 
-      <div class="featured-details">
-        <h2 class="featured-title">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-
-        <p class="featured-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 25 }}
-        </p>
-
-        <a href="{{ post.url | relative_url }}" class="read-more-link">READ MORE</a>
-      </div>
-
-    </article>
-  {% endfor %}
-</main>
+      </article>
+    {% endfor %}
 
     <!-- All Blog Posts Section -->
     <div class="all-posts-section" style="margin-top: 2.5rem;">

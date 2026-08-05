@@ -10,16 +10,15 @@ tags:
   - jekyll
 color: "#858b95"
 ---
-I have been using ai to help me fix the style of my blog and it takes me over 1 hour,until i can't take it anymore search and found it on stack overflow .
+I have been using ai to help me fix the style of my blog and it takes me over 1 hour,until i can't take it anymore search and found it on stack overflow.
 
 Minima markdown can resize and hard force to make it smaller on styles.scss doesn't work.
 
+Since I don't know which links work I test it all links at once , this is how you see it in the image below 😅😛
 
+![](/images/screenshot-388-.png)
 
 ```
-
-
-
 #Raw error all it take it  from this 
 <div class="avatar-container">
   <img src="../images/my-notion-face-transparent.png" alt="Alex Peain - Backend Developer" class="avatar-img" />

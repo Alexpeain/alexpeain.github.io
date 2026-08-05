@@ -4,18 +4,16 @@ title: "Home"
 ---
 
 <div class="hero-section">
-  <!-- Avatar / Illustration (Floated Left) -->
+  <!-- Avatar -->
   <div class="avatar-container">
     <img src="../images/my-notion-face-transparent.png" alt="Alex Peain - Backend Developer" class="avatar-img" />
   </div>
 
   <div class="hero-text">
     <h1 class="hero-greeting">Hi, there!</h1>
-
     <p class="hero-bio-lead">
       I'm <strong>Alex Peain</strong>, and I build <strong>backend systems, APIs, and AI pipelines</strong>.
     </p>
-
     <p class="hero-bio-sub">
       Welcome to my personal site. Here I share notes on Python, Django, system architecture, DevOps, and my software development journey.
     </p>
@@ -29,31 +27,11 @@ title: "Home"
   <aside class="quick-links-sidebar">
     <h3 class="section-title">QUICK LINKS</h3>
     <ul class="quick-links">
-      <li>
-        <a href="{{ '/about/' | relative_url }}">
-          <span class="link-icon">👤</span> ABOUT ME
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/projects/' | relative_url }}">
-          <span class="link-icon">📁</span> ALL PROJECTS
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/blog/' | relative_url }}">
-          <span class="link-icon">📖</span> JOURNAL
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/resume/' | relative_url }}">
-          <span class="link-icon">📄</span> RESUME
-        </a>
-      </li>
-      <li>
-        <a href="{{ '/contact/' | relative_url }}">
-          <span class="link-icon">✉️</span> CONTACT ME
-        </a>
-      </li>
+      <li><a href="{{ '/about/' | relative_url }}"><span class="link-icon">👤</span> ABOUT ME</a></li>
+      <li><a href="{{ '/projects/' | relative_url }}"><span class="link-icon">📁</span> ALL PROJECTS</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}"><span class="link-icon">📖</span> JOURNAL</a></li>
+      <li><a href="{{ '/resume/' | relative_url }}"><span class="link-icon">📄</span> RESUME</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}"><span class="link-icon">✉️</span> CONTACT ME</a></li>
     </ul>
   </aside>
 
@@ -98,15 +76,15 @@ title: "Home"
     {% endif %}
 
     <!-- All Blog Posts Section -->
-    <div class="all-posts-section" style="margin-top: 2.5rem;">
-      <h3 class="featured-heading">ALL POSTS</h3>
-      <ul class="posts-list" style="list-style: none; padding: 0; margin: 0;">
+    <div class="all-posts-section">
+      <h3 class="section-title">ALL POSTS</h3>
+      <ul class="posts-list">
         {% for post in site.posts %}
-          <li style="margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border-color, #e2e8f0); padding-bottom: 0.5rem;">
-            <a href="{{ post.url | relative_url }}" style="font-weight: 600; text-decoration: none; color: var(--text-dark, #0f172a);">
+          <li class="post-item">
+            <a href="{{ post.url | relative_url }}" class="post-link">
               {{ post.title }}
             </a>
-            <span style="font-size: 0.8rem; color: var(--text-light, #64748b);">
+            <span class="post-date">
               {{ post.date | date: "%b %d, %Y" }}
             </span>
           </li>

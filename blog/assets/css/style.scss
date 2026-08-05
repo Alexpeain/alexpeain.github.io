@@ -1,4 +1,4 @@
---- --- @import "minima";
+--- # Front matter ensures Jekyll processes this file --- @import "minima";
 
 /* ============================================
    Custom Notion-Style Theme Override
@@ -27,44 +27,46 @@ body {
 }
 
 /* ============================================
-   Hero Section (Option 2: Floated Avatar)
+   Hero Section
    ============================================ */
 
 .hero-section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  /* Increased space below hero */
   display: flex !important;
   align-items: flex-start !important;
-  gap: 1.5rem !important;
+  gap: 1.25rem !important;
 }
 
-/* Hero Section - Floated Avatar Layout */
-.hero-section::after {
-  content: "";
-  display: table;
-  clear: both;
-  /* Prevents layout broken elements below */
-}
-
+/* Avatar Container */
 .avatar-container {
-  float: left !important;
-  width: 30px !important;
-  height: auto !important;
-  margin-right: 1.25rem !important;
-  margin-bottom: 0.5rem !important;
+  flex-shrink: 0 !important;
+  width: 64px !important;
+  /* Fixed width container */
+  height: 64px !important;
 }
 
+/* Avatar Image - CRITICAL: max-width: none overrides Minima's default image stretching */
 .avatar-img {
-  width: 30px !important;
-  height: auto !important;
+  width: 64px !important;
+  height: 64px !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  /* Circular Notion-style avatar */
   display: block;
+  border: 1px solid var(--border-color);
+  /* Subtle outline like the reference */
 }
 
 .hero-text {
   flex: 1;
+  padding-top: 0.25rem;
+  /* Slight alignment fix */
 }
 
 .hero-greeting {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 800;
   margin: 0 0 0.5rem 0;
   color: var(--text-dark);
@@ -96,19 +98,20 @@ body {
   flex-direction: row !important;
   justify-content: space-between !important;
   align-items: flex-start !important;
-  gap: 3.5rem !important;
+  gap: 4rem !important;
+  /* Wide gap between sidebar and content */
   width: 100% !important;
   box-sizing: border-box;
 }
 
 /* Common Section Titles */
 .section-title {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #999999;
   text-transform: uppercase;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .section-title.text-right {
@@ -117,10 +120,14 @@ body {
 
 /* Left Column: Sidebar */
 .quick-links-sidebar {
-  width: 170px !important;
-  min-width: 170px !important;
-  max-width: 170px !important;
+  width: 160px !important;
+  min-width: 160px !important;
+  max-width: 160px !important;
   flex-shrink: 0 !important;
+
+  /* This makes the sidebar stay in place when scrolling the right column */
+  position: sticky !important;
+  top: 2rem !important;
 }
 
 .quick-links {
@@ -130,7 +137,8 @@ body {
 }
 
 .quick-links li {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.85rem;
+  /* More breathing room */
   list-style: none !important;
 }
 
@@ -143,6 +151,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .quick-links a:hover {
@@ -158,7 +167,6 @@ body {
 .featured-content {
   flex: 1 1 auto !important;
   min-width: 0 !important;
-  width: calc(100% - 210px) !important;
 }
 
 /* Featured Card Layout */
@@ -167,7 +175,8 @@ body {
   flex-direction: row !important;
   gap: 1.5rem !important;
   align-items: flex-start !important;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  /* Space between featured card and all posts list */
 }
 
 .featured-image-wrapper {
@@ -181,14 +190,15 @@ body {
   height: 150px !important;
   object-fit: cover !important;
   display: block;
-  border-radius: 4px;
+  border-radius: 6px;
+  /* Slightly rounded corners for the image */
 }
 
 .featured-details {
   flex: 1 !important;
 }
 
-/* Category Badge (Design / Journal Pills) */
+/* Category Badge */
 .category-badge {
   display: inline-block;
   background-color: var(--bg-badge);
@@ -196,15 +206,15 @@ body {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  padding: 2px 6px;
-  border-radius: 3px;
-  margin-bottom: 0.6rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
   text-transform: uppercase;
 }
 
 /* Post Title */
 .featured-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 800;
   margin: 0 0 0.6rem 0;
   text-transform: uppercase;
@@ -225,7 +235,7 @@ body {
   font-size: 0.88rem;
   color: var(--text-medium);
   line-height: 1.5;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .read-more-link {
@@ -278,6 +288,8 @@ body {
 .post-date {
   font-size: 0.8rem;
   color: var(--text-light);
+  white-space: nowrap;
+  margin-left: 1rem;
 }
 
 /* ============================================
@@ -288,11 +300,19 @@ body {
   .hero-section {
     flex-direction: column !important;
     gap: 1rem !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  /* Turn off sticky positioning on mobile */
+  .quick-links-sidebar {
+    position: relative !important;
+    top: auto !important;
   }
 
   .home-grid {
     flex-direction: column !important;
-    gap: 2rem !important;
+    gap: 3rem !important;
   }
 
   .quick-links-sidebar,

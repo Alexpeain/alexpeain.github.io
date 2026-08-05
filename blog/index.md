@@ -5,8 +5,8 @@ title: "Home"
 
 <div class="hero-section">
   <div class="avatar-container">
-    <img src="../images/my-notion-face-transparent.png" alt="Alex Peain - Backend Developer" class="avatar-img" />
-  </div>
+  ![Alex Peain - Backend Developer](../images/my-notion-face-transparent.png){: style="max-width: 20%; width: 20%; height: auto; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; border: 1px solid #e5e5e5;" class="avatar-img"}
+</div>
 
   <div class="hero-text">
     <h1 class="hero-greeting">Hi, there!</h1>

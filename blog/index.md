@@ -4,7 +4,6 @@ title: "Home"
 ---
 
 <div class="hero-section">
-  <!-- Avatar -->
   <div class="avatar-container">
     <img src="../images/my-notion-face-transparent.png" alt="Alex Peain - Backend Developer" class="avatar-img" />
   </div>
@@ -38,7 +37,6 @@ title: "Home"
   <!-- Right Column: Content Area -->
   <main class="featured-content">
     
-    <!-- Section Header (Aligned Right) -->
     <div class="section-header-row">
       <h3 class="section-title text-right">LATEST POST</h3>
     </div>
@@ -50,7 +48,7 @@ title: "Home"
         {% if latest_post.image %}
           <div class="featured-image-wrapper">
             <a href="{{ latest_post.url | relative_url }}">
-              <img src="{{ latest_post.image | relative_url }}" alt="{{ latest_post.title }}" />
+              <img src="{{ latest_post.image | relative_url }}" alt="{{ latest_post.title }}" class="featured-post-img" />
             </a>
           </div>
         {% endif %}
@@ -76,15 +74,15 @@ title: "Home"
     {% endif %}
 
     <!-- All Blog Posts Section -->
-    <div class="all-posts-section">
-      <h3 class="section-title">ALL POSTS</h3>
-      <ul class="posts-list">
+    <div class="all-posts-section" style="margin-top: 2.5rem;">
+      <h3 class="featured-heading">ALL POSTS</h3>
+      <ul class="posts-list" style="list-style: none; padding: 0; margin: 0;">
         {% for post in site.posts %}
-          <li class="post-item">
-            <a href="{{ post.url | relative_url }}" class="post-link">
+          <li style="margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border-color, #e2e8f0); padding-bottom: 0.5rem;">
+            <a href="{{ post.url | relative_url }}" style="font-weight: 600; text-decoration: none; color: var(--text-dark, #0f172a);">
               {{ post.title }}
             </a>
-            <span class="post-date">
+            <span style="font-size: 0.8rem; color: var(--text-light, #64748b);">
               {{ post.date | date: "%b %d, %Y" }}
             </span>
           </li>

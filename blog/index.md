@@ -87,9 +87,6 @@ title: "Home"
 
       </article>
     {% endfor %}
-  </main>
-</div>
-
     <!-- All Blog Posts Section -->
     <div class="all-posts-section" style="margin-top: 2.5rem;">
       <h3 class="featured-heading">ALL POSTS</h3>
@@ -106,3 +103,7 @@ title: "Home"
         {% endfor %}
       </ul>
     </div>
+  </main>
+</div>
+
+    

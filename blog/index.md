@@ -7,10 +7,10 @@ title: "Home"
   <div class="hero-text">
     <h1 class="hero-greeting">Hi, there!</h1>
     <p class="hero-bio-lead">
-      I'm <strong>Alex Peain</strong>, and I build <strong>backend systems, APIs, and AI pipelines</strong>.
+      I'm <strong>Alex Peain</strong>, and I learn by building <strong>backend systems, APIs, and AI pipelines</strong>.
     </p>
     <p class="hero-bio-sub">
-      Welcome to my personal site. Here I share notes on Python, Django, system architecture, DevOps, and my software development journey.
+      This site is a journal of my journey—from documenting technical and software engineering challenges to personal development, learning notes, book   reviews, and growth in life.
     </p>
   </div>
 </div>
@@ -50,11 +50,17 @@ title: "Home"
         {% endif %}
 
         <div class="featured-details">
-          {% if latest_post.category %}
-            <span class="category-badge">{{ latest_post.category | upcase }}</span>
-          {% else %}
-            <span class="category-badge">GENERAL</span>
-          {% endif %}
+         {% if latest_post.image %}
+          <div class="featured-image-wrapper" style="max-width: 220px; width: 100%;">
+            <a href="{{ latest_post.url | relative_url }}">
+          <img 
+              src="{{ latest_post.image | relative_url }}" 
+              alt="{{ latest_post.title }}" 
+              class="featured-post-img" 
+              style="max-width: 220px; width: 100%; height: 160px; object-fit: cover; border-radius: 4px; display: block;" />
+           </a>
+          </div>
+         {% endif %}
 
           <h2 class="featured-title">
             <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a>

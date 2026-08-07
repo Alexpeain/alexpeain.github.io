@@ -224,10 +224,27 @@ body {
 }
 
 /* ============================================
-   Responsive Rules (Mobile)
+   Responsive Rules & Mobile Layout Fixes
    ============================================ */
 
 @media screen and (max-width: 768px) {
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* Reset layout wrappers for narrow screens */
+  .wrapper,
+  .page-content,
+  main.page-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.25rem 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Hero Section Stacking */
   .hero-section {
     flex-direction: column !important;
     gap: 1rem !important;
@@ -235,9 +252,12 @@ body {
     text-align: center !important;
   }
 
+  /* Switch grid to single-column layout */
   .home-grid {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
+    min-width: 0 !important;
+    width: 100% !important;
   }
 
   .quick-links-sidebar {
@@ -261,6 +281,12 @@ body {
     text-align: left !important;
   }
 
+  /* Featured Cards Stacking */
+  .featured-content {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
   .featured-card {
     flex-direction: column !important;
     gap: 1rem !important;
@@ -269,10 +295,44 @@ body {
   .featured-image-wrapper {
     width: 100% !important;
     min-width: 100% !important;
+    max-width: 100% !important;
   }
 
   .featured-image-wrapper img,
   .featured-image-wrapper .featured-post-img {
-    height: 180px !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+  }
+
+  /* All Posts list alignment and word-wrapping */
+  .post-list {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .post-list li,
+  .post-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem !important;
+    margin-bottom: 1.25rem !important;
+    width: 100% !important;
+  }
+
+  .post-link,
+  .post-title {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    font-size: 1rem !important;
+  }
+
+  .post-meta,
+  .post-date {
+    font-size: 0.75rem !important;
+    color: var(--text-light) !important;
+    white-space: nowrap !important;
   }
 }
